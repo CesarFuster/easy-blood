@@ -10,10 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180409180318) do
+ActiveRecord::Schema.define(version: 20180409183751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "campaigns", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.string "location"
+    t.bigint "institution_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["institution_id"], name: "index_campaigns_on_institution_id"
+  end
+
+  create_table "donations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "campaign_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_donations_on_campaign_id"
+    t.index ["user_id"], name: "index_donations_on_user_id"
+  end
+
+  create_table "institutions", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "email_resp"
+    t.string "name_resp"
+    t.string "phone_number_resp"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "medical_records", force: :cascade do |t|
+    t.float "weight"
+    t.float "height"
+    t.date "birth_date"
+    t.date "last_donation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +70,7 @@ ActiveRecord::Schema.define(version: 20180409180318) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "campaigns", "institutions"
+  add_foreign_key "donations", "campaigns"
+  add_foreign_key "donations", "users"
 end
