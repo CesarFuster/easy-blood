@@ -1,6 +1,6 @@
 class InstitutionsController < ApplicationController
 
-  before_action :set_institution, only [:show, :edit, :update, :destroy]
+  before_action :set_institution, only: [:show, :edit, :update, :destroy]
 
   def index
     @institutions = Institution.all
@@ -42,7 +42,7 @@ class InstitutionsController < ApplicationController
   private
 
   def set_institution
-    Institution.find(params[:id])
+    @institution = Institution.find(params[:id])
   end
 
   def inst_params

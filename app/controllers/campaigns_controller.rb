@@ -44,11 +44,11 @@ class CampaignsController < ApplicationController
   private
 
   def set_institution
-    Institution.find(params[:institution_id])
+    @institution = Institution.find(params[:institution_id])
   end
 
   def set_campaign
-    Campaign.find(params[:id])
+    @campaign = Campaign.find(params[:id])
   end
 
   def params_campaign

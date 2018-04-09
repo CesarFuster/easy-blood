@@ -1,6 +1,7 @@
-class MedicalRecordsController < ApplicationController
+class MedicalrecordsController < ApplicationController
 
-  before_action :set_medicalrecord, only: [:show, :new, :create]
+  before_action :set_user, only: [:show, :new, :create]
+  before_action :set_medicalrecord, only: [:edit, :update, :destroy]
 
   def show
   end
@@ -38,13 +39,15 @@ class MedicalRecordsController < ApplicationController
 
   private
 
+  def set_user
+    @user = User.find(params[:user_id])
+  end
+
   def set_medicalrecord
-    @medicalrecord = MedicalRecord.find(params[:user_id])
+    @medicalrecord = MedicalRecord.find(params[:id])
   end
 
   def params_medical
     params.require(:medicalrecord).permit(:weight, :height, :birth_date, :last_donation)
-  end
-
   end
 end
