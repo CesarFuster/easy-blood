@@ -1,7 +1,7 @@
 class MedicalRecordsController < ApplicationController
 
   def show
-    @medical_record = current_user.medical_record
+    @medical_record = MedicalRecord.find(params[:id])
   end
 
   def new
