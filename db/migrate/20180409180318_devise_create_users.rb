@@ -9,13 +9,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :address
       t.string :phone_number
       t.string :blood_type
-      t.string :available_monday
-      t.string :available_tuesday
-      t.string :available_wednesday
-      t.string :available_thursday
-      t.string :available_friday
-      t.string :available_saturday
-      t.string :available_sunday
+      t.string :available_monday, default: 'Indisponível'
+      t.string :available_tuesday, default: 'Indisponível'
+      t.string :available_wednesday, default: 'Indisponível'
+      t.string :available_thursday, default: 'Indisponível'
+      t.string :available_friday, default: 'Indisponível'
+      t.string :available_saturday, default: 'Indisponível'
+      t.string :available_sunday, default: 'Indisponível'
 
 
 
