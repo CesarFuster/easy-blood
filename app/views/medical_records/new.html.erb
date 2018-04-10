@@ -1,0 +1,18 @@
+<div class="container">
+
+  <h2>profile</h2>
+    <p> <%= current_user.first_name %>  <%= current_user.last_name %></p>
+    <p> <%= current_user.email %> </p>
+    <p> <%= current_user.phone_number %> </p>
+    <p> <%= current_user.address %> </p>
+    <p> <%= current_user.blood_type %> </p>
+
+    <% if current_user.medical_record %>
+      <%= render 'form' %>
+    <% end %>
+
+</div>
+
+
+
+
