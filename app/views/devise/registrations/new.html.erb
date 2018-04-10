@@ -5,7 +5,20 @@
 
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :first_name, required: true  %>
+    <%= f.input :last_name, required: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :address, required: true %>
+    <%= f.input :phone_number %>
+    <%= f.input :blood_type, collection: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] %>
+    <%= f.input :available_monday, collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
+    <%= f.input :available_tuesday, collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+    <%= f.input :available_wednesday, collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+    <%= f.input :available_thursday, collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+    <%= f.input :available_friday, collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+    <%= f.input :available_saturday, collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+    <%= f.input :available_sunday, collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
+
     <%= f.input :password_confirmation, required: true %>
   </div>
 
