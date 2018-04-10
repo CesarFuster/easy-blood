@@ -20,15 +20,9 @@
         <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
-
-            <% if current_user.medical_record %>
               <%= link_to profile_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
                 <% end %>
-            <% else %>
-                <%= link_to "Profile", new_medical_record_path, class: "navbar-wagon-item navbar-wagon-link" %>
-            <% end %>
-
           </li>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
