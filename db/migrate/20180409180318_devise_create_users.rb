@@ -6,10 +6,18 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       # Database registration
       t.string :first_name, null: false, default: ""
       t.string :last_name, null: false, default: ""
-      t.string :home_address
-      t.string :work_address
+      t.string :address
       t.string :phone_number
       t.string :blood_type
+      t.string :available_monday
+      t.string :available_tuesday
+      t.string :available_wednesday
+      t.string :available_thursday
+      t.string :available_friday
+      t.string :available_saturday
+      t.string :available_sunday
+
+
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""

@@ -54,6 +54,18 @@ ActiveRecord::Schema.define(version: 20180409183751) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "address"
+    t.string "phone_number"
+    t.string "blood_type"
+    t.string "available_monday"
+    t.string "available_tuesday"
+    t.string "available_wednesday"
+    t.string "available_thursday"
+    t.string "available_friday"
+    t.string "available_saturday"
+    t.string "available_sunday"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
