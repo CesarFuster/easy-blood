@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>profile</h2>
+    <p> <%= current_user.first_name %>  <%= current_user.last_name %></p>
+    <p> <%= current_user.email %> </p>
+    <p> <%= current_user.phone_number %> </p>
+    <p> <%= current_user.address %> </p>
+    <p> <%= current_user.blood_type %> </p>
+
+<% if current_user.medical_record %>
+  <h3>medical record</h3>
+    <p> <%= current_user.medical_record.weight %> </p>
+    <p> <%= current_user.medical_record.height %> </p>
+    <p> <%= current_user.medical_record.birth_date%> </p>
+    <p> <%= current_user.medical_record.last_donation %> </p>
+<% end %>
+
+  <h3>campanhas que você participou </h3>
+    <p> campanha 1 </p>
+    <p> campanha 2 </p>
+
+
+</div>
