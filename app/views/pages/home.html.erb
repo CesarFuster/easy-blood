@@ -4,21 +4,26 @@
 <% end %>
 <% end %>
 
-  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://blog.nemours.org/wp-content/uploads/2016/10/ThinkstockPhotos-489486064-2048x800.jpg');">
-   <div class="banner-content">
-     <h1>Doe sangue</h1>
-     <p>A gente deixou mais fácil pra você</p>
-        <%= link_to "Eu quero doar!", new_user_registration_path, class: "btn-pink" %>
-   </div>
-  </div>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://blog.nemours.org/wp-content/uploads/2016/10/ThinkstockPhotos-489486064-2048x800.jpg');">
+ <div class="banner-content">
+   <h1>Doar é fácil</h1>
+   <p>Quanto mais cadastros, mais chances de novas campanhas para doação.</p>
+   <%= link_to "Doe sangue", new_user_registration_path, class: "btn-pink" %>
+ </div>
+</div>
 
-<div class="pink-wrapper">
+<div class="white-wrapper">
   <div class="container">
    <div class="campaigns">
     <div class="row">
+      <div class="campaigns-text">
+        <h3>Campanhas</h3>
+        <h5>Veja os locais e datas de campanhas de coleta.</h5>
+        <p>Faça agora mesmo o seu cadastro e convide mais pessoas para criarem juntas uma nova campanha próxima e horário conveniente.</p>
+      </div>
       <% @campaigns.each do |campaign| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+        <div class="card">
           <div class="card-category"><%= campaign.institution.name %></div>
           <div class="card-description">
             <h2><%= campaign.location %></h2>
@@ -28,20 +33,52 @@
         </div>
       </div>
       <% end %>
+    </div >
+    <div class="button-all-campaigns">
+      <%= link_to "Todas as campanhas", campaigns_path, class: "btn-pink" %>
     </div>
-    <%= link_to "Ver todas campanhas", campaigns_path, class: "btn btn-primary" %>
   </div>
 </div>
 </div>
 
-
-<div class="container">
-
-  <div class="testimonials">
-  </div>
-  <div class="supporters">
+<div class="white-wrapper">
+  <div class="container">
+    <div class="supporters">
+      <h3>mapa google fake</h3>
+    </div>
   </div>
 </div>
+
+
+<div class="bege-wrapper">
+  <div class="container">
+    <div class="supporters">
+      <h3>Empresas parceiras</h3>
+    </div>
+  </div>
+</div>
+
+<div class="white-wrapper testimonials">
+  <div class="container">
+    <div class="testimonials">
+      <div class="title-testimonials">
+        <h3>Depoimentos</h3>
+        <div class="list-testemonials">
+          <ul>
+            <li>Fulano</li>
+            <li>Fulano</li>
+            <li>Fulano</li>
+            <li>Fulano</li>
+            <li>Fulano</li>
+            <li>Fulano</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 

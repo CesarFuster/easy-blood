@@ -5,46 +5,57 @@
   height: 100vh;
 }
 
-.card {
-  margin-top:20px;
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-position: center;
-  color: white;
+.white-wrapper{
+  background-color: white;
+  height: 100vh;
+  color: $pink;
+}
+
+.bege-wrapper{
+  background-color: $bege;
+  height: 100vh;
+}
+
+.white-wrapper .testimonials{
+  height: 100vh;
+  color: $pink;
+  opacity: 0.9;
+}
+
+h3 {
+    text-align: center;
+}
+
+h5, p {
+    text-align: center;
+    color: black;
+}
+
+.campaigns {
   position: relative;
 }
 
-.card-category {
+.campaigns-text {
+
+}
+
+.button-all-campaigns {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 15px;
-  text-transform: uppercase;
+  right: 20px;
+  bottom: 5px;
 }
-.card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
+
+.testimonials {
+  position: relative;
 }
-.card-description h2 {
-  font-size: 24px;
+
+li {
+  list-style: none;
+  color: black;
+
 }
-.card-description p {
-  font-size: 14px;
-  opacity: 0.7;
-  font-weight: lighter;
-}
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
-}
-.card-link:hover {
-  opacity: 0.1;
-}
+
+
+
+
+
