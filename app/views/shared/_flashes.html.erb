@@ -1,8 +1,14 @@
 <% if notice %>
-  <div class="alert alert-info alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <% if params[:new_user] == 'true' %>
+  <% content_for :after_js do %>
+    <%= javascript_tag "swal('Parabéns pelo cadastro!', 'Seu gesto de doar sangue salva vidas! Enviaremos e-mail assim que houver uma campanha próxima ao seu endereço', 'success')" %>
+  <% end %>
+  <% else %>
+    <div class="alert alert-info alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <%= notice %>
-  </div>
+    </div>
+  <% end %>
 <% end %>
 <% if alert %>
   <div class="alert alert-warning alert-dismissible" role="alert">
