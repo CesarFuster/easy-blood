@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_one :medical_record
   has_many :campaigns, through: :donations
+  
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

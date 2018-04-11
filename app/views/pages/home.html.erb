@@ -45,9 +45,12 @@
 </div>
 
 <!-- Geocoding com campanhas -->
-<div class="banner" style="background-image: url('http://podcreative.ca/wp-content/uploads/2017/12/GoogleMap-1-1200x630-e1479510841629.jpg');">
-</div>
-
+   <div
+        id="map"
+        style="width: 100%; height: 600px;"
+        data-markers="<%= @markers.to_json %>">  
+      </div>
+    </div>
 <!-- Logos de empresas parceiras com wrapper branco -->
 <div class="white-wrapper">
   <div class="container">
@@ -95,8 +98,4 @@
 </div>
 </div>
 </div>
-
-
-
-
 
