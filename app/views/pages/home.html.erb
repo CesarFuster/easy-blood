@@ -1,13 +1,9 @@
-<% if params[:new_user] == 'true' %>
-<% content_for :after_js do %>
-<%= javascript_tag "swal('Parabéns pelo cadastro!', 'Seu gesto de doar sangue salva vidas! Enviaremos e-mail assim que houver uma campanha próxima ao seu endereço', 'success')" %>
-<% end %>
-<% end %>
-
+<!-- Banner com imagem -->
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://blog.nemours.org/wp-content/uploads/2016/10/ThinkstockPhotos-489486064-2048x800.jpg');">
    <div class="banner-content">
      <h1>Doe sangue</h1>
      <p>A gente deixou mais fácil pra você</p>
+     <!-- Botão para cadastro de usuário -->
         <%= link_to "Eu quero doar!", new_user_registration_path, class: "btn-pink" %>
    </div>
   </div>
