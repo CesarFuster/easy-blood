@@ -1,1 +1,87 @@
 // Specific CSS for your home-page
+
+.pink-wrapper{
+  background-color: $pink;
+  height: 100vh;
+}
+
+.white-wrapper{
+  background-color: white;
+  height: 100vh;
+  color: $pink;
+  position:relative;
+  h3 {
+    text-align: center;
+  }
+
+  h5, p {
+    text-align: center;
+    color: black;
+  }
+}
+
+.bege-wrapper{
+  background-color: $bege;
+  height: 100vh;
+  h3 {
+    text-align: center;
+  }
+
+  h5, p {
+  text-align: center;
+  color: black;
+  }
+}
+
+
+.campaigns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-all-campaigns {
+  margin: 20px;
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
+}
+
+.supporters {
+  margin-top: 120px;
+  margin-left: 80px;
+  margin-right: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-testemonials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 35px;
+}
+
+.testemonial{
+  text-align:center;
+  margin-right: 30px;
+  img {
+    margin-bottom: 15px;
+  }
+}
+
+.text {
+  margin: 0px 20px;
+  padding: 10px;
+}
+
+.text p {
+  font-size: 16px;
+}
+
+
+
+
+
+

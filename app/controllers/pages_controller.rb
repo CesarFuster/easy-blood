@@ -9,7 +9,6 @@ class PagesController < ApplicationController
         lat: user.latitude,
         lng: user.longitude
       }
-    end
+    @campaigns = Campaign.where("end_date > ?", Date.today).order(:start_date).first(6)
   end
-
 end

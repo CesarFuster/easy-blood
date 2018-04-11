@@ -1,0 +1,11 @@
+<div class="form-inputs">
+  <%= simple_form_for @medical_record do |f| %>
+    <%= f.input :weight, required: true %>
+    <%= f.input :height, required: true  %>
+    <%= f.input :birth_date, required: true %>
+    <%= f.input :last_donation, required: true %>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>

@@ -1,13 +1,21 @@
 class CampaignsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
 
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
   before_action :set_institution, only: [:edit, :update]
 
   def index
-    @campaigns = Campaign.all
+    @campaigns = Campaign.order(:start_date)
   end
 
   def show
+    ###### Sample data to seed campaigns/show #####
+    @people = %w[Janete Suzana Maria Felipe Claudio Gabriel Lucas Giovanna Renata Maria Joana].shuffle!
+    @emails = %w[**@gmail.com ***@hotmail.com ***@yahoo.com **@uol.com.br]
+    @lat = -23.944841
+    @lon = -46.330376
+    ###### Sample data to seed campaigns/show #####
   end
 
   def new

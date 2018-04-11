@@ -1,0 +1,43 @@
+<div class="container"><h1>Seja um apoiador da nossa causa</h1>
+  <p>Faça uma das doações abaixo e tenha o seu nome em nosso Hall da Fama:</p>
+
+  <%= form_tag contributors_path do %>
+  <article>
+    <% if flash[:error].present? %>
+    <div id="error_explanation">
+      <p><%= flash[:error] %></p>
+    </div>
+    <% end %>
+
+
+    <input type="text" id='amount-user' class='hidden' name='amount' value="">
+
+    <% @amount.each do |value| %>
+    <div class="donations">
+      <label class="amount">
+        <span><%= pretty_amount(value.to_i) %></span>
+      </label>
+    </div>
+  </article>
+
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+  data-description="<%= @description %>"
+  data-amount="<%= value.to_i %>"
+  data-locale="auto"
+  <% if user_signed_in? %>
+  data-email="<%= current_user.email %>"
+  <% end %>
+  data-bitcoin="true"
+  data-label="Doar">
+</script>
+
+<% end %>
+<% end %>
+
+</div>
+
+
+<script>
+</script>

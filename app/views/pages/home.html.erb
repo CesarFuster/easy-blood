@@ -1,57 +1,101 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<div class="container">
-  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
-   <div class="banner-content">
-     <h1>Le Wagon Berlin</h1>
-     <p>Learn to code with us in Berlin</p>
-     <a class="btn btn-primary btn-lg">Start now</a>
-   </div>
- </div>
- <div class="campaigns">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>Le Wagon Shanghai</h2>
-            <p>Very cool city, the best</p>
-          </div>
-          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-          <a class="card-link" href="#" ></a>
-        </div>    </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-            <div class="card-category">Popular</div>
-            <div class="card-description">
-              <h2>Le Wagon Shanghai</h2>
-              <p>Very cool city, the best</p>
-            </div>
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-            <a class="card-link" href="#" ></a>
-          </div>    </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-              <div class="card-category">Popular</div>
-              <div class="card-description">
-                <h2>Le Wagon Shanghai</h2>
-                <p>Very cool city, the best</p>
-              </div>
-              <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-              <a class="card-link" href="#" ></a>
-            </div>    </div>
-          </div>
-        </div>
+<% if params[:new_user] == 'true' %>
+<% content_for :after_js do %>
+<%= javascript_tag "swal('Parabéns pelo cadastro!', 'Seu gesto de doar sangue salva vidas! Enviaremos e-mail assim que houver uma campanha próxima ao seu endereço', 'success')" %>
+<% end %>
+<% end %>
 
+<!-- Banner principal com call-to-action -->
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://blog.nemours.org/wp-content/uploads/2016/10/ThinkstockPhotos-489486064-2048x800.jpg');">
+ <div class="banner-content">
+   <h1>Doar é fácil</h1>
+   <p>Quanto mais cadastros, mais chances de novas campanhas para doação.</p>
+   <%= link_to "Doe sangue", new_user_registration_path, class: "btn-pink" %>
+ </div>
+</div>
+
+<!-- Campanhas com white wrapper -->
+<div class="white-wrapper">
+  <div class="container">
+   <div class="campaigns">
+    <div class="row">
+      <div class="campaigns-text">
+        <h3>Campanhas</h3>
+        <h5>Veja os locais e datas de campanhas de coleta programadas.</h5>
+        <p>Faça agora mesmo o seu cadastro e convide mais pessoas para criarem uma campanha mais próxima e em horário conveniente.</p>
       </div>
-      <div class="testimonials">
+      <% @campaigns.each do |campaign| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <div class="card-category"><%= campaign.institution.name %></div>
+          <div class="card-description">
+            <h2><%= campaign.location %></h2>
+            <p>Data de início: <%= campaign.start_date %></p>
+          </div>
+          <a class="card-link" href="<%= campaign_path(campaign) %>" ></a>
+        </div>
       </div>
-      <div class="supporters">  
+      <% end %>
+      <div class="button-all-campaigns">
+        <%= link_to " + Campanhas", campaigns_path, class: "btn-bege" %>
       </div>
-      <div
+    </div >
+
+  </div>
+</div>
+</div>
+
+<!-- Geocoding com campanhas -->
+   <div
         id="map"
         style="width: 100%; height: 600px;"
         data-markers="<%= @markers.to_json %>">  
       </div>
     </div>
+<!-- Logos de empresas parceiras com wrapper branco -->
+<div class="white-wrapper">
+  <div class="container">
+    <h3>Empresas parceiras</h3>
+    <div class="supporters">
+      <%= image_tag "logo.png", height: 80 %>
+      <%= image_tag "logo-google.png", height: 80 %>
+      <%= image_tag "einstein.png", height: 80 %>
+      <%= image_tag "sao-luiz.png", height: 80 %>
+    </div>
+    <div class="supporters">
+      <%= image_tag "sirio.png", height: 80 %>
+      <%= image_tag "hc.png", height: 80 %>
+      <%= image_tag "joana.png", height: 80 %>
+      <%= image_tag "john.png", height: 80 %>
+    </div>
+  </div>
+</div>
+
+
+<!-- Banner com depoimentos  -->
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://www.pnbank.com.au/globalassets/images/power-of-and/science-of/power_of_touch.jpg');">
+ <div class="banner-content">
+  <h3>Depoimentos</h3>
+  <p></p>
+  <div class="list-testemonials">
+    <div class="testemonial">
+      <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
+      <div class="text">
+       <p>"Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pess Mauris aliquet nunc non turpis scelerisque, eget. Mais vale um bebadis conhecidiss, que alcoolatra anonimis."</p>
+     </div>
+   </div>
+   <div class="testemonial">
+    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="avatar-large"/>
+    <div class="text">
+      <p>"Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pess Mauris aliquet nunc non turpis scelerisque, eget. Mais vale um bebadis conhecidiss, que alcoolatra anonimis."</p>
+    </div>
+  </div>
+  <div class="testemonial">
+    <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar-large"/>
+    <div class="text">
+      <p>"Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pess Mauris aliquet nunc non turpis scelerisque, eget. Mais vale um bebadis conhecidiss, que alcoolatra anonimis."</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+

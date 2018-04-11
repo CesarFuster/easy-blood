@@ -38,10 +38,11 @@
 /* Navbar link */
 .navbar-wagon-link {
   color: #616668;
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: bold;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $pink;
   text-decoration: none;
 }
 
