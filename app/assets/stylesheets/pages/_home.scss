@@ -9,6 +9,7 @@
   background-color: white;
   height: 100vh;
   color: $pink;
+  position:relative;
   h3 {
     text-align: center;
   }
@@ -42,20 +43,20 @@
   }
 }
 
-
 .campaigns {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-all-campaigns {
+  margin: 20px;
   position: absolute;
-  right: 10px;
-  bottom: 0px;
+  bottom: 10px;
+  right: 40px;
 }
 
-.testimonials {
-  position: relative;
-}
+
 
 
 

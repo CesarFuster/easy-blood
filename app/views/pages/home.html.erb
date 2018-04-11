@@ -22,7 +22,6 @@
         <h3>Campanhas</h3>
         <h5>Veja os locais e datas de campanhas de coleta programadas.</h5>
         <p>Faça agora mesmo o seu cadastro e convide mais pessoas para criarem uma campanha mais próxima e em horário conveniente.</p>
-        <p>Confira abaixo o mapa de localização de cada campanha.</p>
       </div>
       <% @campaigns.each do |campaign| %>
       <div class="col-xs-12 col-sm-4">
@@ -36,10 +35,11 @@
         </div>
       </div>
       <% end %>
-      <div class="button-all-campaigns">
-        <%= link_to "Todas as campanhas", campaigns_path, class: "btn-pink" %>
-      </div>
+        <div class="button-all-campaigns">
+      <%= link_to " + Campanhas", campaigns_path, class: "btn-bege" %>
+        </div>
     </div >
+
   </div>
 </div>
 </div>
@@ -65,7 +65,7 @@
 </div>
 
 <!-- Depoimentos com wrapper branco -->
-<div class="white-wrapper testimonials">
+<div class="white-wrapper">
   <div class="container">
     <div class="testimonials">
       <div class="title-testimonials">
