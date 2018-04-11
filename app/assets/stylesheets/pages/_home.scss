@@ -9,51 +9,54 @@
   background-color: white;
   height: 100vh;
   color: $pink;
+  h3 {
+    text-align: center;
+  }
+
+  h5, p {
+    text-align: center;
+    color: black;
+  }
 }
 
 .bege-wrapper{
   background-color: $bege;
   height: 100vh;
+  h3 {
+    text-align: center;
+  }
+
+  h5, p {
+  text-align: center;
+  color: black;
+  }
 }
 
 .white-wrapper .testimonials{
   height: 100vh;
   color: $pink;
   opacity: 0.9;
+  li {
+  list-style: none;
+  color: black;
+  }
 }
 
-h3 {
-    text-align: center;
-}
-
-h5, p {
-    text-align: center;
-    color: black;
-}
 
 .campaigns {
   position: relative;
 }
 
-.campaigns-text {
-
-}
-
 .button-all-campaigns {
   position: absolute;
-  right: 20px;
-  bottom: 5px;
+  right: 10px;
+  bottom: 0px;
 }
 
 .testimonials {
   position: relative;
 }
 
-li {
-  list-style: none;
-  color: black;
-
-}
 
 
 
