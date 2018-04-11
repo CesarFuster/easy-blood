@@ -20,6 +20,7 @@
   padding: 0px 10px;
 }
 .footer-links a:hover {
+  color: $pink;
   opacity: 1;
 }
 .footer .fa-heart {
@@ -29,11 +30,14 @@
 .list-footer li {
   list-style-type: none;
   font-size: 14px;
+  //color: rgba(0,0,0,0.3);
+}
+
+.list-footer a{
   color: rgba(0,0,0,0.3);
-  text-decoration: none;
   &:hover {
   text-decoration: none;
-  color: black;
+  color: $pink;
   }
 }
 

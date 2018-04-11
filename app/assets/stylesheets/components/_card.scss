@@ -1,0 +1,50 @@
+.card {
+  margin-top:20px;
+  height: 175px;
+  //text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-image: image-url('card_default_pink.png');
+  //background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), image-url('card_default_white.png');
+  background-size: cover !important;
+  background-position: center;
+  color: $pink;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: white;
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+}
+.card-description h2 {
+  font-size: 24px;
+  color: white;
+}
+.card-description p {
+  font-size: 14px;
+  //opacity: 0.7;
+  font-weight: lighter;
+  color: $bege;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
