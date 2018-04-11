@@ -1,22 +1,28 @@
-<div class="container">
-  <h2>profile</h2>
-    <p> <%= current_user.first_name %>  <%= current_user.last_name %></p>
-    <p> <%= current_user.email %> </p>
-    <p> <%= current_user.phone_number %> </p>
-    <p> <%= current_user.address %> </p>
-    <p> <%= current_user.blood_type %> </p>
-
-<% if current_user.medical_record %>
-  <h3>medical record</h3>
-    <p> <%= current_user.medical_record.weight %> </p>
-    <p> <%= current_user.medical_record.height %> </p>
-    <p> <%= current_user.medical_record.birth_date%> </p>
-    <p> <%= current_user.medical_record.last_donation %> </p>
-<% end %>
-
-  <h3>campanhas que você participou </h3>
-    <p> campanha 1 </p>
-    <p> campanha 2 </p>
-
-
+<div class="bege-wrapper">
+  <div class="container">
+    <div class="profile">
+      <div>
+        <h3><strong>Perfil de <%= current_user.first_name.capitalize %>  <%= current_user.last_name.capitalize %> </strong></h3>
+        <p>Dados pessoais</p>
+        <p>email: <%= current_user.email %> </p>
+        <p>Fone: <%= current_user.phone_number %> </p>
+        <p>End.: <%= current_user.address %> </p>
+        <p>Tipo Sanguíneo: <%= current_user.blood_type %> </p>
+      </div>
+      <div>
+        <% if current_user.medical_record %>
+        <h3>Registro Médico</h3>
+        <p>Peso(kg): <%= current_user.medical_record.weight %> </p>
+        <p>Altura(m):<%= current_user.medical_record.height %> </p>
+        <p>Data de Nasc.: <%= current_user.medical_record.birth_date%> </p>
+        <p>Doação mais recente: <%= current_user.medical_record.last_donation %> </p>
+        <% end %>
+      </div>
+      <div>
+        <h3>Campanhas que você participou</h3>
+        <p>campanha 1</p>
+        <p>campanha 2</p>
+      </div>
+    </div>
+  </div>
 </div>
