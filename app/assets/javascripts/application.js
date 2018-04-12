@@ -1,8 +1,6 @@
 //= require rails-ujs
 //= require_tree .
 
-
-
 var buttons = document.querySelectorAll('.stripe-button-el')
 
 for (var i = 0; i < buttons.length ; i++) {
