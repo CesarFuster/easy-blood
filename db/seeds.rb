@@ -40,10 +40,10 @@ campaign25 = Campaign.create(start_date: Date.today, end_date: (Date.today + 8),
 
 puts "Seeding 5 users..."
 
-user1 = User.create(email: 'email1@email.com', first_name: 'César', last_name: 'Fuster', address: 'Rua Nanuque, 115, São Paulo', phone_number: '9999-9999', blood_type: 'A+', password: '123456', password_confirmation: '123456')
-user2 = User.create(email: 'email2@email.com', first_name: 'João', last_name: 'nonononon', address: 'Rua Mourato Coelho, 1404, São Paulo', phone_number: '9999-9999', blood_type: 'O+', password: '123456', password_confirmation: '123456')
-user3 = User.create(email: 'email3@email.com', first_name: 'Maria', last_name: 'nonon', address: 'Avenida Paulista, 2073, São Paulo', phone_number: '9999-9999', blood_type: 'O+', password: '123456', password_confirmation: '123456')
-user4 = User.create(email: 'email4@email.com', first_name: 'Roberto', last_name: 'nonono', address: 'Rua Cardeal Arcoverde, 2450, São Paulo', phone_number: '9999-9999', blood_type: 'AB+', password: '123456', password_confirmation: '123456')
-user5 = User.create(email: 'email5@email.com', first_name: 'Marcelo', last_name: 'nonono', address: 'Avenida Angélica, 400, São Paulo', phone_number: '9999-9999', blood_type: 'B+', password: '123456', password_confirmation: '123456')
+user1 = User.create(email: 'email1@email.com', first_name: 'César', last_name: 'Fuster', address: 'Rua Nanuque, 115, São Paulo', phone_number: '9999-9999', blood_type: 'A+', available_monday: 'manhã', password: '123456', password_confirmation: '123456')
+user2 = User.create(email: 'email2@email.com', first_name: 'João', last_name: 'nonononon', address: 'Rua Mourato Coelho, 1404, São Paulo', phone_number: '9999-9999', blood_type: 'O+', available_monday: 'tarde', password: '123456', password_confirmation: '123456')
+user3 = User.create(email: 'email3@email.com', first_name: 'Maria', last_name: 'nonon', address: 'Avenida Paulista, 2073, São Paulo', phone_number: '9999-9999', blood_type: 'O+', available_friday: 'tarde', password: '123456', password_confirmation: '123456')
+user4 = User.create(email: 'email4@email.com', first_name: 'Roberto', last_name: 'nonono', address: 'Rua Cardeal Arcoverde, 2450, São Paulo', phone_number: '9999-9999', blood_type: 'AB+', available_tuesday: 'tarde', password: '123456', password_confirmation: '123456')
+user5 = User.create(email: 'email5@email.com', first_name: 'Marcelo', last_name: 'nonono', address: 'Avenida Angélica, 400, São Paulo', phone_number: '9999-9999', blood_type: 'B+', available_wednesday: 'tarde', password: '123456', password_confirmation: '123456')
 
 puts "Finished!"
