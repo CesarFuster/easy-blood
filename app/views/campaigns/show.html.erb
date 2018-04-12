@@ -1,39 +1,18 @@
-<div class="container">
-  <h1>Instituição: <%= @campaign.institution.name %></h1>
-  <h4>Inicio:<%= @campaign.start_date %> / Fim: <%= @campaign.end_date %></h4>
-
-
-  <div class="map">
-    <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@lat},#{@lon}&markers=#{@lat},#{@lon}&zoom=7&size=640x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8"%>
+<div class="wrapper">
+  <div class="container">
+    <div class="show-campaign">
+      <div>
+        <h3>Instituição: <%= @campaign.institution.name %></h3>
+        <p><strong>Início: <%= @campaign.start_date %> | Fim: <%= @campaign.end_date %> </strong></p>
+        <p class="heart"><strong> <%= @people.count %> </strong> pessoas têm interesse.</p>
+      </div>
+      <div class="map">
+        <p>Localização</p>
+        <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@lat},#{@lon}&markers=#{@lat},#{@lon}&zoom=7&size=640x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8", height: 300 %>
+      </div>
+    </div>
+    <div class="button-back">
+      <%= link_to 'Voltar', :back, class: "btn-bege" %>
+    </div>
   </div>
-
-
-  <h3><%= @people.count %> pessoas se interessaram por essa campanha:</h3>
-
-
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @people.each_with_index do |key,index| %>
-      <tr>
-        <th scope="row"><%= index %></th>
-        <td><%= key %></td>
-        <td><%= key.downcase + @emails.sample %></td>
-      </tr>
-      <% end %>
-
-    </tbody>
-  </table>
-
-  <div>
-    <button type="button" class="btn btn-primary">Quero participar</button>
-  </div>
-  <%= link_to 'Back', :back, class: "btn btn-primary" %>
-
 </div>

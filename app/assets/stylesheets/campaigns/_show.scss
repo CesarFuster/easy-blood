@@ -1,13 +1,35 @@
-.table {
-margin-top: 20px;
+
+.wrapper {
+  background-color: white;
+  height: 70vh;
 }
 
+.show-campaign {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h3 {
+    color: $pink;
+  }
+}
 
-.map{
+.heart {
+  display: block;
+
+  background-image: image-url('heart.png');
+  background-size: cover;
+  height: 300px;
+  width: 350px;
+}
+
+.map {
+  margin-top: 30px;
+  margin-right: 50px;
+}
+
+.button-back {
   margin-top: 20px;
-}
-
-
-.participants{
-  margin: 40px;
+  margin-right: 50px;
+  bottom: 10px;
+  float: right;
 }
