@@ -1,22 +1,29 @@
-<div class="container"><h1>Campanhas</h1>
-<p>Aqui você encontra todas as campanhas disponíveis:</p>
-
- <div class="campaigns">
-  <div class="row">
-    <% @campaigns.each do |campaign| %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-        <div class="card-category"><%= campaign.institution.name %></div>
-        <div class="card-description">
-          <h2><%= campaign.location %></h2>
-          <p>Data de início: <%= campaign.start_date %></p>
-        </div>
-        <a class="card-link" href="<%= campaign_path(campaign) %>" ></a>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="title-all">
+        <h3>Todas as campanhas</h3>
       </div>
+      <% @campaigns.each do |campaign| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <div class="card-category"><%= campaign.institution.name %></div>
+          <div class="card-description">
+            <h2><%= campaign.location %></h2>
+            <p>Data de início: <%= campaign.start_date %></p>
+          </div>
+          <a class="card-link" href="<%= campaign_path(campaign) %>" ></a>
+        </div>
+      </div>
+      <% end %>
     </div>
-    <% end %>
+    <div class="button-back">
+      <%= link_to 'Voltar', :back, class: "btn-pink" %>
+    </div>
   </div>
 </div>
-<%= link_to 'Back', :back, class: "btn btn-primary" %>
 
-</div>
+
+
+
+

@@ -2,10 +2,10 @@
   <%= simple_form_for @medical_record do |f| %>
     <%= f.input :weight, required: true %>
     <%= f.input :height, required: true  %>
-    <%= f.input :birth_date, required: true %>
+    <%= f.input :birth_date, required: true, start_year: Date.today.year - 100, end_year: Date.today.year  %>
     <%= f.input :last_donation, required: true %>
     <div class="form-actions">
-      <%= f.button :submit %>
+      <%= f.button :submit, class: "btn-bege" %>
     </div>
   <% end %>
 </div>
