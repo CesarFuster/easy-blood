@@ -1,31 +1,26 @@
-
 <div class="wrapper">
   <div class="container">
-   <div class="campaigns">
-
     <div class="row">
-      <div class="campaigns-text">
+      <div class="title-all">
         <h3>Todas as campanhas</h3>
-        <% @campaigns.each do |campaign| %>
-        <div>
-          <div class="card">
-            <div class="card-category"><%= campaign.institution.name %></div>
-            <div class="card-description">
-              <h2><%= campaign.location %></h2>
-              <p>Data de início: <%= campaign.start_date %></p>
-            </div>
-            <a class="card-link" href="<%= campaign_path(campaign) %>" ></a>
+      </div>
+      <% @campaigns.each do |campaign| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <div class="card-category"><%= campaign.institution.name %></div>
+          <div class="card-description">
+            <h2><%= campaign.location %></h2>
+            <p>Data de início: <%= campaign.start_date %></p>
           </div>
+          <a class="card-link" href="<%= campaign_path(campaign) %>" ></a>
         </div>
-        <% end %>
-        <div class="button-all-campaigns">
-          <%= link_to 'Voltar', :back, class: "btn-pink" %>
-        </div>
-      </div >
+      </div>
+      <% end %>
     </div>
-
+    <div class="button-back">
+      <%= link_to 'Voltar', :back, class: "btn-pink" %>
+    </div>
   </div>
-</div>
 </div>
 
 
