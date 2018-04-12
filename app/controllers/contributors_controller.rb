@@ -10,7 +10,7 @@ class ContributorsController < ApplicationController
   end
 
   def create
-    # binding.pry
+    session[:amount] = params[:amount]
     customer = StripeTool.create_customer(email: params[:stripeEmail],
       stripe_token: params[:stripeToken])
 
@@ -18,7 +18,7 @@ class ContributorsController < ApplicationController
       amount: params[:amount],
       description: @description)
 
-    redirect_to thanks_path(amount: params[:amount])
+    redirect_to thanks_path
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_contributor_path
