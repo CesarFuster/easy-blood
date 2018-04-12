@@ -4,8 +4,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
     root_path(new_user: true)
   end
 
-  def create
-    UserMailer.welcome(params[:user]).deliver_now
-    super
-  end
 end

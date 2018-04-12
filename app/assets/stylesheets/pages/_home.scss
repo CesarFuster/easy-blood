@@ -7,7 +7,7 @@
 
 .white-wrapper{
   background-color: white;
-  height: 100vh;
+  height: 105vh;
   color: $pink;
   position:relative;
   h3 {
@@ -33,15 +33,15 @@
   }
 }
 
-
 .campaigns {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 .button-all-campaigns {
-  margin: 20px;
+  margin: 10px;
   position: absolute;
   bottom: 10px;
   right: 40px;
