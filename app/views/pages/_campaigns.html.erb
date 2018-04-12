@@ -1,0 +1,31 @@
+<!-- Campanhas com white wrapper -->
+<div class="white-wrapper">
+  <div class="container">
+   <div class="campaigns">
+    <div class="row">
+      <div class="campaigns-text">
+        <h3>Campanhas</h3>
+        <h5>Veja os locais e datas de campanhas de coleta programadas.</h5>
+        <p>Faça agora mesmo o seu cadastro e convide mais pessoas para criarem uma campanha mais próxima e em horário conveniente.</p>
+      </div>
+      <% @campaigns.each do |campaign| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <div class="card-category"><%= campaign.institution.name %></div>
+          <div class="card-description">
+            <h2><%= campaign.location %></h2>
+            <p>Data de início: <%= campaign.start_date %></p>
+          </div>
+          <a class="card-link" href="<%= campaign_path(campaign) %>" ></a>
+        </div>
+      </div>
+      <% end %>
+      <div class="button-all-campaigns">
+        <%= link_to " + Campanhas", campaigns_path, class: "btn-bege" %>
+      </div>
+    </div >
+
+  </div>
+</div>
+</div>
+
