@@ -1,15 +1,18 @@
 <div class="wrapper">
   <div class="container">
     <div class="show-campaign">
-      <div>
-        <h3>Instituição: <%= @campaign.institution.name %></h3>
+      <div class="campaign-details">
+        <h3><%= @campaign.institution.name %></h3>
         <p><strong>Início: <%= @campaign.start_date %> | Fim: <%= @campaign.end_date %> </strong></p>
-        <p>Doar é fácil. Participe!</p>
+        <h4>Doar é fácil. Participe!</h4>
         <p>Mussum Ipsum, cacilds vidis litro abertis. Per aumento de cachacis, eu reclamis. Suco de cevadiss deixa as pessoas mais interessantis. Interagi no mé, cursus quis, vehicula ac nisi. Quem num gosta di mé, boa gentis.</p>
+        <p>Mussum de cevadiss deixa as pessoas mais interessantis. Interagi no mé, cursus quis, vehicula ac nisi. Quem num gosta di mé, boa gentis.</p>
+        <p><%= @campaign.cpoint.address %></p>
       </div>
-      <div class="map">
-        <p>Localização</p>
-        <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@lat},#{@lon}&markers=#{@lat},#{@lon}&zoom=7&size=640x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8", height: 300 %>
+      <div
+          id="map-id"
+          style="width: 400px; height: 270px;"
+          data-marker="<%= @marker.to_json %>">
       </div>
     </div>
     <div class="button-back">

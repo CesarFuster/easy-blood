@@ -1,3 +1,6 @@
+
+
+
 Campaign.destroy_all
 Institution.destroy_all
 User.destroy_all
@@ -52,3 +55,4 @@ user1 = User.create(email: 'mlessa@gmail.com', first_name: 'César', last_name: 
 # user5 = User.create(email: 'email5@email.com', first_name: 'Marcelo', last_name: 'nonono', address: 'Avenida Angélica, 400, São Paulo', phone_number: '9999-9999', blood_type: 'B+', available_wednesday: 'tarde', password: '123456', password_confirmation: '123456')
 
 puts "Finished!"
+

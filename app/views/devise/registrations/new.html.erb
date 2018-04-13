@@ -1,32 +1,39 @@
-<div class="container">
-<h2>Sign up</h2>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <h3 style="text-align: center">Cadastro</h3>
+      <div class="col-sm-8">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :first_name, required: true  %>
-    <%= f.input :last_name, required: true %>
-    <%= f.input :address, required: true, id: 'user_address' %>
-    <%= f.input :phone_number %>
-    <%= f.input :blood_type, collection: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] %>
-    <%= f.input :available_monday, collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
-    <%= f.input :available_tuesday, collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-    <%= f.input :available_wednesday, collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-    <%= f.input :available_thursday, collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-    <%= f.input :available_friday, collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-    <%= f.input :available_saturday, collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-    <%= f.input :available_sunday, collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :first_name, required: true  %>
+          <%= f.input :last_name, required: true %>
+          <%= f.input :address, required: true, id: 'user_address' %>
+          <%= f.input :phone_number %>
+          <%= f.input :blood_type, collection: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] %>
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
 
-    <%= f.input :password_confirmation, required: true %>
+          <%= f.input :password_confirmation, required: true %>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <p>Disponibilidade</p>
+        <div>
+          <%= f.input :available_monday, :label => "Segunda-feira", collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
+          <%= f.input :available_tuesday, :label => "Terça-feira", collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+          <%= f.input :available_wednesday, :label => "Quarta-feira",collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+          <%= f.input :available_thursday, :label => "Quinta-feira",collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+          <%= f.input :available_friday, :label => "Sexta-feira", collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+          <%= f.input :available_saturday, :label => "Sábado", collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+          <%= f.input :available_sunday, :label => "Domingo", collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
+        </div>
+      </div>
+   <div class="form-actions">
+      <%= f.button :submit, "Enviar", class: 'btn-bege' %>
+    </div>
+    <% end %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
 </div>

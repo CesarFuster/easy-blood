@@ -1,7 +1,5 @@
 class CampaignsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  
-
 
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
   before_action :set_institution, only: [:edit, :update]
@@ -11,6 +9,12 @@ class CampaignsController < ApplicationController
   end
 
   def show
+    @cpoint = @campaign.cpoint
+    @marker =
+      [{
+        lat: @cpoint.latitude,
+        lng: @cpoint.longitude
+      }]
   end
 
   def new
@@ -18,7 +22,6 @@ class CampaignsController < ApplicationController
   end
 
   def create
-  
     if @campaign.save
       redirect_to campaign_path(@campaign)
     else
