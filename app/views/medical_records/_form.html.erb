@@ -1,11 +1,14 @@
 <div class="form-inputs">
   <%= simple_form_for @medical_record do |f| %>
-    <%= f.input :weight, required: true %>
-    <%= f.input :height, required: true  %>
-    <%= f.input :birth_date, required: true, start_year: Date.today.year - 100, end_year: Date.today.year  %>
-    <%= f.input :last_donation, required: true %>
+    <%= f.input :weight, :label => "Peso(kg)", required: true %>
+    <%= f.input :height, :label => "Altura(m)", required: true  %>
+    <%= f.input :birth_date, :label => "Data de Nascimento", required: true, start_year: Date.today.year - 16, end_year: Date.today.year - 100 %>
+    <%= f.input :last_donation, :label => "Data da última doação de sangue" %>
+    <p>Caso nunca tenha doado, ignore.</p>
     <div class="form-actions">
-      <%= f.button :submit, class: "btn-bege" %>
+      <%= f.button :submit, "Enviar", class: "btn-bege" %>
     </div>
   <% end %>
 </div>
+
+
