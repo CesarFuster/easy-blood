@@ -10,6 +10,8 @@ def self.run
   end
 end
 
+
+
  def self.get_data
     cpoint_array = []
     user_array = []
