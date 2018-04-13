@@ -5,7 +5,7 @@ def self.run
   if !new_hash[:users].empty?
     CampaignCreator.run(new_hash)
     new_hash[:users].each do |user|
-      CampaignMailer.new_campaign(User.first).deliver_now
+      CampaignMailer.new_campaign(user).deliver_now
     end
   end
 end
@@ -14,9 +14,11 @@ end
     cpoint_array = []
     user_array = []
     Cpoint.all.each do |cpoint|
-      user_array << User.near(cpoint.address, 5) 
-      if user_array.length > 4 
-        cpoint_array << cpoint
+      User.near(cpoint.address, 5).each do |user|
+        user_array << user
+        if user_array.length > 0
+          cpoint_array << cpoint
+        end
       end
     end
     return {cpoint: cpoint_array, users: user_array}
