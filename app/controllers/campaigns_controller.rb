@@ -11,10 +11,10 @@ class CampaignsController < ApplicationController
   def show
     @cpoint = @campaign.cpoint
     @marker =
-      {
+      [{
         lat: @cpoint.latitude,
         lng: @cpoint.longitude
-      }
+      }]
   end
 
   def new

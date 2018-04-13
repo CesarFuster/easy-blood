@@ -1,18 +1,18 @@
 <div class="wrapper">
   <div class="container">
     <div class="show-campaign">
-      <div>
+      <div class="campaign-details">
         <h3><%= @campaign.institution.name %></h3>
         <p><strong>Início: <%= @campaign.start_date %> | Fim: <%= @campaign.end_date %> </strong></p>
-        <p>Doar é fácil. Participe!</p>
+        <h4>Doar é fácil. Participe!</h4>
         <p>Mussum Ipsum, cacilds vidis litro abertis. Per aumento de cachacis, eu reclamis. Suco de cevadiss deixa as pessoas mais interessantis. Interagi no mé, cursus quis, vehicula ac nisi. Quem num gosta di mé, boa gentis.</p>
-        <p> latitude: <%= @campaign.cpoint.latitude %> </p>
-        <p> longitude: <%= @campaign.cpoint.longitude %> </p>
+        <p>Mussum de cevadiss deixa as pessoas mais interessantis. Interagi no mé, cursus quis, vehicula ac nisi. Quem num gosta di mé, boa gentis.</p>
+        <p><%= @campaign.cpoint.address %></p>
       </div>
       <div
-          id="map"
-          style="width: 400px; height: 400px;"
-          data-markers="<%= @marker.to_json %>">
+          id="map-id"
+          style="width: 400px; height: 270px;"
+          data-marker="<%= @marker.to_json %>">
       </div>
     </div>
     <div class="button-back">
