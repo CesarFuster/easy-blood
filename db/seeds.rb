@@ -42,7 +42,10 @@ puts "cpoint"
 
 cpoint = Cpoint.create(address: 'rua mourato coelho, 1404 - Sao Paulo')
 
-# user1 = User.create(email: 'email@email.com', first_name: 'César', last_name: 'Fuster', address: 'Rua Mourato Coelho, 1500, São Paulo', phone_number: '9999-9999', blood_type: 'A+', available_monday: 'manhã', password: '123456', password_confirmation: '123456')
+puts "Seeding 5 users..."
+
+user1 = User.create(email: 'mlessa@gmail.com', first_name: 'César', last_name: 'Fuster', address: 'Rua Mourato Coelho, 1500, São Paulo', phone_number: '9999-9999', blood_type: 'A+', available_monday: 'manhã', password: '123456', password_confirmation: '123456')
+
 # user2 = User.create(email: 'email2@email.com', first_name: 'João', last_name: 'nonononon', address: 'Rua Mourato Coelho, 1404, São Paulo', phone_number: '9999-9999', blood_type: 'O+', available_monday: 'tarde', password: '123456', password_confirmation: '123456')
 # user3 = User.create(email: 'email3@email.com', first_name: 'Maria', last_name: 'nonon', address: 'Avenida Paulista, 2073, São Paulo', phone_number: '9999-9999', blood_type: 'O+', available_friday: 'tarde', password: '123456', password_confirmation: '123456')
 # user4 = User.create(email: 'email4@email.com', first_name: 'Roberto', last_name: 'nonono', address: 'Rua Cardeal Arcoverde, 2450, São Paulo', phone_number: '9999-9999', blood_type: 'AB+', available_tuesday: 'tarde', password: '123456', password_confirmation: '123456')
