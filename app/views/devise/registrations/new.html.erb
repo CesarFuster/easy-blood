@@ -21,20 +21,19 @@
       <div class="col-sm-4">
         <p>Disponibilidade</p>
         <div>
-          <%= f.input :available_monday, collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
-          <%= f.input :available_tuesday, collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-          <%= f.input :available_wednesday, collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-          <%= f.input :available_thursday, collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-          <%= f.input :available_friday, collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-          <%= f.input :available_saturday, collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-          <%= f.input :available_sunday, collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
+          <%= f.input :available_monday, :label => "Segunda-feira", collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
+          <%= f.input :available_tuesday, :label => "Terça-feira", collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+          <%= f.input :available_wednesday, :label => "Quarta-feira",collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+          <%= f.input :available_thursday, :label => "Quinta-feira",collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+          <%= f.input :available_friday, :label => "Sexta-feira", collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+          <%= f.input :available_saturday, :label => "Sábado", collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+          <%= f.input :available_sunday, :label => "Domingo", collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
         </div>
       </div>
-
-    </div>
-              <div class="form-actions">
+   <div class="form-actions">
       <%= f.button :submit, "Enviar", class: 'btn-bege' %>
     </div>
     <% end %>
+    </div>
   </div>
 </div>
