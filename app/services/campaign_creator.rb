@@ -7,7 +7,7 @@ class CampaignCreator
   def self.generate
     array = []
     Cpoint.all.each do |cpoint|
-      array << cpoint if User.near(cpoint.address, 5).length > 1
+      array << cpoint if User.near(cpoint.address, 5).length > 4
     end
     return array
   end
