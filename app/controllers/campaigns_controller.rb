@@ -1,5 +1,6 @@
 class CampaignsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  
 
 
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
@@ -10,12 +11,6 @@ class CampaignsController < ApplicationController
   end
 
   def show
-    ###### Sample data to seed campaigns/show #####
-    @people = %w[Janete Suzana Maria Felipe Claudio Gabriel Lucas Giovanna Renata Maria Joana].shuffle!
-    @emails = %w[**@gmail.com ***@hotmail.com ***@yahoo.com **@uol.com.br]
-    @lat = -23.944841
-    @lon = -46.330376
-    ###### Sample data to seed campaigns/show #####
   end
 
   def new
@@ -23,7 +18,7 @@ class CampaignsController < ApplicationController
   end
 
   def create
-    @campaign = Campaign.new(params_campaign)
+  
     if @campaign.save
       redirect_to campaign_path(@campaign)
     else
@@ -60,7 +55,7 @@ class CampaignsController < ApplicationController
   end
 
   def params_campaign
-    params.require(:campaign).permit(:start_date, :end_date, :location, :institutional_id)
+    params.require(:campaign).permit(:start_date, :end_date, :location, :institutional_id, :cpoint_id)
   end
 
 end

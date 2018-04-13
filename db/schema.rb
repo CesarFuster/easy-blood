@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180411144814) do
+ActiveRecord::Schema.define(version: 20180412180443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,15 @@ ActiveRecord::Schema.define(version: 20180411144814) do
     t.bigint "institution_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "cpoint_id"
+    t.index ["cpoint_id"], name: "index_campaigns_on_cpoint_id"
     t.index ["institution_id"], name: "index_campaigns_on_institution_id"
+  end
+
+  create_table "cpoints", force: :cascade do |t|
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "donations", force: :cascade do |t|
@@ -86,6 +94,7 @@ ActiveRecord::Schema.define(version: 20180411144814) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "campaigns", "cpoints"
   add_foreign_key "campaigns", "institutions"
   add_foreign_key "donations", "campaigns"
   add_foreign_key "donations", "users"
