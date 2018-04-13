@@ -6,8 +6,7 @@ class User < ApplicationRecord
   has_one :medical_record
   has_many :campaigns, through: :donations
   after_create :send_welcome_email
-  after_create :create_campaign
-
+  after_create :campaign_email
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
@@ -23,7 +22,7 @@ class User < ApplicationRecord
     UserMailer.welcome(self).deliver_now
   end
 
-  def create_campaign
-    CampaignCreator.run
+  def campaign_email
+    UsersCampaign.run
   end
 end
