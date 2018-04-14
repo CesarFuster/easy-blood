@@ -3,7 +3,7 @@ class CampaignMailer < ApplicationMailer
     @user = user
     mail(
           to: @user[:email],
-          subject: "#Olá {@user[:first_name]}, uma campanha foi criada perto de você!"
+          subject: "Olá #{@user[:first_name]}, uma campanha foi criada perto de você!"
         )
   end
 end
