@@ -20,7 +20,7 @@ end
       if User.near(cpoint.address, 5).length > 0 
           User.near(cpoint.address, 5).each do |user| #itera todos os usuarios a cada Cpoint se estao ao redor de 5km
           user_array << user
-          if user_array.length > 4 #numero de pessoas que ao redor do Cpoint --- for testing = 0
+          if user_array.length > 0 #numero de pessoas que ao redor do Cpoint --- for testing = 0
             cpoint_array << cpoint
       else
         user_array = []
