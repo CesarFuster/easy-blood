@@ -4,7 +4,7 @@
    <div class="campaigns">
     <div class="row">
       <div class="campaigns-text">
-        <h3>Campanhas</h3>
+        <h2>Campanhas</h2>
         <h5>Veja os locais e datas de campanhas de coleta programadas.</h5>
         <p>Faça agora mesmo o seu cadastro e convide mais pessoas para criarem uma campanha mais próxima e em horário conveniente.</p>
       </div>
@@ -14,7 +14,7 @@
           <div class="card-category"><%= campaign.institution.name %></div>
           <div class="card-description">
             <h2> <%= campaign.start_date.strftime("%d/%m") %> a <%= campaign.end_date.strftime("%d/%m") %> </h2>
-            <p>Local: <%= campaign.cpoint.address %></p>
+            <p><%= campaign.cpoint.address %></p>
           </div>
           <a class="card-link" href="<%= campaign_path(campaign) %>" ></a>
         </div>
