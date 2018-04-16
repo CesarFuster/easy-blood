@@ -4,7 +4,7 @@ class UserMailer < ApplicationMailer
     @user = user #instance variable avaiable in view
     mail(
           to: @user[:email],
-          subject: "#{@user[:first_name]}, cadastro realizado com sucesso!"
+          subject: "Olá #{@user[:first_name]}, obrigado por fazer parte da Easy Blood!"
         )
   end
 end

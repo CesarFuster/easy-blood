@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_one :medical_record
   has_many :campaigns, through: :donations
-  after_create :send_welcome_email
-  after_create :campaign_email
+  after_create :send_welcome_email #callback de email de cadastro
+  after_create :campaign_email #callback de email de campanha
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
@@ -19,10 +19,10 @@ class User < ApplicationRecord
   private
 
   def send_welcome_email
-    UserMailer.welcome(self).deliver_now
+    UserMailer.welcome(self).deliver_now # action de mandar o email de cadastro
   end
 
   def campaign_email
-    UsersCampaign.run
+    UsersCampaign.run #action de verificar criar campanha e mailing de campanha
   end
 end
