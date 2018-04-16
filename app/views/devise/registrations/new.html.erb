@@ -31,6 +31,10 @@
           <%= f.input :available_sunday, :label => "Domingos", collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
         </div>
       </div>
+
+   <div class="form-actions">
+      <%= f.button :submit, "Enviar", class: 'btn-white' %>
+
     </div>
     <div class="row">
       <div class="col-sm-offset-2 col-sm-4">
