@@ -2,7 +2,7 @@
   background-color: white;
   color: black;
   border: 1px solid #999999;
-  padding: 10px 15px;
+  padding: 10px 10px;
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.8;
@@ -17,7 +17,7 @@
   background-color: $pink;
   color: white;
   border: 1px solid $pink;
-  padding: 10px 15px;
+  padding: 10px 10px;
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.8;
@@ -32,10 +32,11 @@
   background-color: $pink;
   color: white;
   border: 1px solid $pink;
-  padding: 10px 15px;
-  border-radius: 10px;
-  font-weight: lighter;
+  padding: 25px 25px;
+  border-radius: 25px;
+  font-weight: 900;
   opacity: 0.8;
+  font-size: 25px;
 }
 .btn-pink-lg:hover {
   opacity: 1;
@@ -48,7 +49,7 @@
   background-color: $bege;
   color: black;
   border: 1px solid $bege;
-  padding: 10px 15px;
+  padding: 10px 10px;
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.8;

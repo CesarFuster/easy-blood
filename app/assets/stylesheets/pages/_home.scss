@@ -7,16 +7,37 @@
 
 .white-wrapper{
   background-color: white;
-  height: 105vh;
+  height: 100vh;
   color: $pink;
   position:relative;
   h3 {
     text-align: center;
   }
 
-  h5, p {
+  .campaigns-text {
+
+    h5, p {
+      text-align: center;
+      color: black;
+    }
+  }
+}
+
+.white-wrapper-campaigns{
+  background-color: white;
+  //height: 120%;
+  color: $pink;
+  position:relative;
+  h3 {
     text-align: center;
-    color: black;
+  }
+
+  .campaigns-text {
+
+  h5, p {
+      text-align: center;
+      color: black;
+    }
   }
 }
 
