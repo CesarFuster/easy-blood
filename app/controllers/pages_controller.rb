@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index]
 
   def home
-    @source = Rails.application.routes.recognize_path(request.referrer)
+    @source = Rails.application.routes.recognize_path(request.referrer) unless request.referrer.nil?
     @campaigns = Campaign.where("end_date > ?", Date.today).order(:start_date).first(6)
     @users = User.where.not(latitude: nil, longitude: nil)
 
