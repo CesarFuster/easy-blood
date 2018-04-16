@@ -37,3 +37,16 @@
   bottom: 10px;
   float: right;
 }
+
+.btn-text{
+  font-weight: bold;
+  font-family: Sans-serif;
+}
+
+.myBtn {
+  background-color: $pink;
+  float: center;
+  color: white;
+  font-weight: lighter;
+  border-radius: 8px;
+}

@@ -9,11 +9,30 @@
         <p>Estamos muito felizes em anunciar mais uma campanha com <%= @campaign.institution.name %>. Isso será possível por contar com centenas de pessoas que se colocaram à disposição em participar conforme a sua disponibilidade.</p>
         <p>Caso o local e data sejam convenientes para você, participe. Caso contrário, faça seu cadastro e informe o melhor local, assim como os dias da semana e horários. Convide mais pessoas e torça para juntos criarem uma nova campanha!</p>
       </div>
+      <!-- Mapa com localização do evento -->
       <div
-      id="map-id"
-      style="width: 400px; height: 270px;"
-      data-marker="<%= @marker.to_json %>">
+
+          id="map-id"
+          style="width: 400px; height: 270px;"
+          data-marker="<%= @marker.to_json %>">
+      </div>
     </div>
+
+    <!-- Botão para confirmar presença -->
+
+    <% if user_signed_in? %>
+      <% if UsersCampaign.get_data[:users].any? { |user| user.id == current_user.id } %>
+<!--         <%= link_to 'Voltar', :back, class: "btn-bege" %> -->
+        <div class="btn-text">
+          <p>Confirmar minha presença:</p>
+          <div class="presence-confirm">
+            <button class="myBtn" id="confirmMe">Conte comigo!</button>
+          </div>
+        </div>
+
+      <% end %>
+    <% end %>
+
   </div>
   <div class="button-back">
     <%= link_to 'Voltar', :back, class: "btn-white" %>
