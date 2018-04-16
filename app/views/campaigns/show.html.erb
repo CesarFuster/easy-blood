@@ -7,7 +7,7 @@
         <p>Local: <%= @campaign.cpoint.address %></p>
         <h4>Doar é fácil. Participe!</h4>
         <p>Estamos muito felizes em anunciar mais uma campanha com <%= @campaign.institution.name %>. Isso será possível por contar com centenas de pessoas que se colocaram à disposição em participar conforme a sua disponibilidade.</p>
-        <p>Caso o local e data sejam convenientes para você, participe. Caso contrário, faça seu cadastro e informe o melhor local, assim como os dias da semana e horários. Convide mais pessoas e torça para juntos criarem uma nova campanha!</p>
+        <p>Caso o local e data sejam convenientes para você, participe. Caso contrário, faça seu cadastro e informe o melhor local, assim como os dias da semana e horários. Convide amigos e familiares e torça para juntos criarem uma nova campanha!</p>
       </div>
       <!-- Mapa com localização do evento -->
       <div
@@ -24,7 +24,6 @@
       <% if UsersCampaign.get_data[:users].any? { |user| user.id == current_user.id } %>
 <!--         <%= link_to 'Voltar', :back, class: "btn-bege" %> -->
         <div class="btn-text">
-          <p>Confirmar minha presença:</p>
           <div class="presence-confirm">
             <button class="myBtn" id="confirmMe">Conte comigo!</button>
           </div>
