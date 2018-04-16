@@ -1,22 +1,22 @@
-<div class="wrapper">
+<div class="wrapper-campaign">
   <div class="container">
     <div class="show-campaign">
-      <div class="campaign-details">
+      <div class="campaign-details col-xs-12">
         <h3><%= @campaign.institution.name %></h3>
-        <p><strong>Início: <%= @campaign.start_date %> | Fim: <%= @campaign.end_date %> </strong></p>
+        <p><strong> <%= @campaign.start_date.strftime("%d/%m") %> a <%= @campaign.end_date.strftime("%d/%m") %> </strong> </p>
+        <p>Local: <%= @campaign.cpoint.address %></p>
         <h4>Doar é fácil. Participe!</h4>
-        <p>Mussum Ipsum, cacilds vidis litro abertis. Per aumento de cachacis, eu reclamis. Suco de cevadiss deixa as pessoas mais interessantis. Interagi no mé, cursus quis, vehicula ac nisi. Quem num gosta di mé, boa gentis.</p>
-        <p>Mussum de cevadiss deixa as pessoas mais interessantis. Interagi no mé, cursus quis, vehicula ac nisi. Quem num gosta di mé, boa gentis.</p>
-        <p><%= @campaign.cpoint.address %></p>
+        <p>Estamos muito felizes em anunciar mais uma campanha com <%= @campaign.institution.name %>. Isso será possível por contar com centenas de pessoas que se colocaram à disposição em participar conforme a sua disponibilidade.</p>
+        <p>Caso o local e data sejam convenientes para você, participe. Caso contrário, faça seu cadastro e informe o melhor local, assim como os dias da semana e horários. Convide mais pessoas e torça para juntos criarem uma nova campanha!</p>
       </div>
       <div
-          id="map-id"
-          style="width: 400px; height: 270px;"
-          data-marker="<%= @marker.to_json %>">
-      </div>
-    </div>
-    <div class="button-back">
-      <%= link_to 'Voltar', :back, class: "btn-bege" %>
+      id="map-id"
+      style="width: 400px; height: 270px;"
+      data-marker="<%= @marker.to_json %>">
     </div>
   </div>
+  <div class="button-back">
+    <%= link_to 'Voltar', :back, class: "btn-white" %>
+  </div>
+</div>
 </div>

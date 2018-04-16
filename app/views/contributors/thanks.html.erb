@@ -1,15 +1,17 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-10">
-      <h2>Obrigado pela sua contribuição de <strong><%= pretty_amount(session[:amount]) %></strong>!
-      </h2>
-      <p>Divulgue voce tambem a nossa causa.</p>
-    </div>
+<div class="white-wrapper-thanks">
 
-    <div class="col-md-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-10">
+        <h3>Obrigado pela sua contribuição: </h3>
+        <h1><strong><%= pretty_amount(session[:amount]) %></strong>! </h1>
+        <p></p>
+        <h4>Divulgue a nossa causa.</h4>
+      </div>
 
-      <%= image_tag("thanks.png")  %>
-
+      <div class="hidden-xs hidden-sm col-md-2">
+        <%= image_tag("thanks.png")%>
+      </div>
     </div>
   </div>
 </div>
