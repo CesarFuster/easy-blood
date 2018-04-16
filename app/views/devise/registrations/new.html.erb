@@ -1,39 +1,45 @@
 <div class="wrapper">
   <div class="container">
     <div class="row">
-      <h3 style="text-align: center">Cadastro</h3>
-      <div class="col-sm-8">
+      <h3 style="text-align: center">Faça seu cadastro</h3>
+      <div class="col-sm-offset-2 col-sm-4 col-sm-offset-2">
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true %>
-          <%= f.input :first_name, required: true  %>
-          <%= f.input :last_name, required: true %>
-          <%= f.input :address, required: true, id: 'user_address' %>
-          <%= f.input :phone_number %>
-          <%= f.input :blood_type, collection: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] %>
-          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-
-          <%= f.input :password_confirmation, required: true %>
+          <%= f.input :email, :label => "E-mail", required: true, autofocus: true %>
+          <%= f.input :first_name, :label => "Nome", required: true  %>
+          <%= f.input :last_name, :label => "Sobrenome", required: true %>
+          <%= f.input :address, :label => "Endereço", required: true, id: 'user_address' %>
+          <%= f.input :phone_number, :label => "Telefone" %>
+          <%= f.input :blood_type, :label => "Tipo sanguineo", collection: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] %>
+          <%= f.input :password, :label => "Senha", required: true, hint: ("mínimo de #{@minimum_password_length} caracteres" if @minimum_password_length) %>
+          <%= f.input :password_confirmation, :label => "Confirmação de senha", required: true %>
         </div>
       </div>
       <div class="col-sm-4">
-        <p>Disponibilidade</p>
         <div>
-          <%= f.input :available_monday, :label => "Segunda-feira", collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
-          <%= f.input :available_tuesday, :label => "Terça-feira", collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-          <%= f.input :available_wednesday, :label => "Quarta-feira",collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-          <%= f.input :available_thursday, :label => "Quinta-feira",collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-          <%= f.input :available_friday, :label => "Sexta-feira", collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-          <%= f.input :available_saturday, :label => "Sábado", collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-          <%= f.input :available_sunday, :label => "Domingo", collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
+          <%= f.input :available_monday, :label => "Sua disponibilidade nas segunda-feiras", collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
+          <%= f.input :available_tuesday, :label => "Sua disponibilidade nas terça-feiras", collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+          <%= f.input :available_wednesday, :label => "Sua disponibilidade nas quarta-feiras",collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+          <%= f.input :available_thursday, :label => "Sua disponibilidade nas quinta-feiras",collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+          <%= f.input :available_friday, :label => "Sua disponibilidade nas sexta-feiras", collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+          <%= f.input :available_saturday, :label => "Sua disponibilidade nos sábados", collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+          <%= f.input :available_sunday, :label => "Sua disponibilidade nos domingos", collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
         </div>
       </div>
-   <div class="form-actions">
-      <%= f.button :submit, "Enviar", class: 'btn-bege' %>
     </div>
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-4">
+        <div class="form-actions">
+          <div style="margin-top: -150px">
+            <%= f.button :submit, "Enviar", class: 'btn-bege btn-top' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <% end %>
-    </div>
   </div>
 </div>
