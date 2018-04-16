@@ -1,7 +1,7 @@
-<div class="wrapper">
+<div class="wrapper-campaign">
   <div class="container">
     <div class="show-campaign">
-      <div class="campaign-details">
+      <div class="campaign-details col-xs-12">
         <h3><%= @campaign.institution.name %></h3>
         <p><strong> <%= @campaign.start_date.strftime("%d/%m") %> a <%= @campaign.end_date.strftime("%d/%m") %> </strong> </p>
         <h4>Doar é fácil. Participe!</h4>
@@ -10,13 +10,13 @@
         <p>Local: <%= @campaign.cpoint.address %></p>
       </div>
       <div
-          id="map-id"
-          style="width: 400px; height: 270px;"
-          data-marker="<%= @marker.to_json %>">
-      </div>
-    </div>
-    <div class="button-back">
-      <%= link_to 'Voltar', :back, class: "btn-white" %>
+      id="map-id"
+      style="width: 400px; height: 270px;"
+      data-marker="<%= @marker.to_json %>">
     </div>
   </div>
+  <div class="button-back">
+    <%= link_to 'Voltar', :back, class: "btn-white" %>
+  </div>
+</div>
 </div>
