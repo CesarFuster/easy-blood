@@ -23,6 +23,24 @@
   }
 }
 
+.white-wrapper-campaigns{
+  background-color: white;
+  //height: 120%;
+  color: $pink;
+  position:relative;
+  h3 {
+    text-align: center;
+  }
+
+  .campaigns-text {
+
+  h5, p {
+      text-align: center;
+      color: black;
+    }
+  }
+}
+
 .bege-wrapper{
   background-color: $bege;
   height: 100vh;
