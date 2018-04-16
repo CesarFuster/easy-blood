@@ -47,12 +47,14 @@
   </head>
   <body>
     <!-- This file lives in public/500.html -->
-    <a href="/"><img src="/assets/logo_easy.png" alt="EasyBlood" class="logo" /></a>
+
+
+    <%= cl_image_tag("logo_easy.png", :class=>"logo", :crop=>"scale") %>
     <div class="dialog">
       <h1>Querido doador.</h1>
       <h2>Algo deu errado na nossa cozinha!</h2>
       <h3>Melhor você voltar para <a href="/">nossa home.</a></h3>
-      <a href="/"><img src="/assets/kitchen-disaster.jpg" alt="" /></img></a>
+    <%= cl_image_tag("kitchen-disaster.jpg") %>
       <p>Estamos aqui para apagar o fogo da cozinha.</p>
     </div>
   </body>

@@ -9,7 +9,7 @@ class ErrorsController < ApplicationController
   def error_422
    respond_to do |format|
     format.html { render status: 422 }
-    format.any  { render text: "422 Unprocessable Entity", status: 422 }
+    format.any  { render text: "422 Unprocessable Entity", layout: false, status: 422 }
   end
 end
 
