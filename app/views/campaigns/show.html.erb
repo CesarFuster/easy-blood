@@ -9,6 +9,7 @@
         <p>Mussum de cevadiss deixa as pessoas mais interessantis. Interagi no mé, cursus quis, vehicula ac nisi. Quem num gosta di mé, boa gentis.</p>
         <p><%= @campaign.cpoint.address %></p>
       </div>
+      <!-- Mapa com localização do evento -->
       <div
           id="map-id"
           style="width: 400px; height: 270px;"
@@ -17,8 +18,18 @@
     </div>
 
     <!-- Botão para confirmar presença -->
-    <% if current_user.medical_record.nil? %>
-      <!-- INSERIR BOTÃO COM MODAL OU SWAL -->
+
+    <% if user_signed_in? %>
+      <% if UsersCampaign.get_data[:users].any? { |user| user.id == current_user.id } %>
+<!--         <%= link_to 'Voltar', :back, class: "btn-bege" %> -->
+        <div class="btn-text">
+          <p>Confirmar minha presença:</p>
+          <div class="presence-confirm">
+            <button class="myBtn" id="confirmMe">Conte comigo!</button>
+          </div>
+        </div>
+
+      <% end %>
     <% end %>
 
 
