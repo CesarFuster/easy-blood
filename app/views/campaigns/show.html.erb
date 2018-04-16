@@ -15,6 +15,15 @@
           data-marker="<%= @marker.to_json %>">
       </div>
     </div>
+
+    <!-- Botão para confirmar presença -->
+    <% if current_user.medical_record.nil? %>
+      <!-- INSERIR BOTÃO COM MODAL OU SWAL -->
+    <% end %>
+
+
+
+
     <div class="button-back">
       <%= link_to 'Voltar', :back, class: "btn-bege" %>
     </div>
