@@ -3,7 +3,7 @@
     <div class="show-campaign">
       <div class="campaign-details">
         <h3><%= @campaign.institution.name %></h3>
-        <p><strong>De: <%= @campaign.start_date %> a: <%= @campaign.end_date %> </strong></p>
+        <p><strong> <%= @campaign.start_date.strftime("%d/%m") %> a <%= @campaign.end_date.strftime("%d/%m") %> </strong> </p>
         <h4>Doar é fácil. Participe!</h4>
         <p>Estamos muito felizes em anunciar mais uma campanha com <%= @campaign.institution.name %>. Isso será possível por contar com centenas de pessoas que se colocaram à disposição em participar conforme a sua disponibilidade.</p>
         <p>Caso o local e data sejam convenientes para você, participe. Caso contrário, faça seu cadastro e informe o melhor local, assim como os dias da semana e horários. Convide mais pessoas e torça para juntos criarem uma nova campanha!</p>
