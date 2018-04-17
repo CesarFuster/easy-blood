@@ -4,9 +4,9 @@
 def self.run
   new_hash = self.get_data
   if !new_hash[:users].empty?
-    CampaignCreator.run(new_hash)
+    campaign = CampaignCreator.run(new_hash)
     new_hash[:users].each do |user|
-      CampaignMailer.new_campaign(user).deliver_now
+      CampaignMailer.new_campaign(user, campaign).deliver_now
     end
   end
 end
@@ -17,7 +17,7 @@ end
     cpoint_array = []
     user_array = []
     Cpoint.all.each do |cpoint|
-      if User.near(cpoint.address, 5).length > 0 
+      if User.near(cpoint.address, 5).length > 0
           User.near(cpoint.address, 5).each do |user| #itera todos os usuarios a cada Cpoint se estao ao redor de 5km
           user_array << user
           if user_array.length > 0 #numero de pessoas que ao redor do Cpoint --- for testing = 0

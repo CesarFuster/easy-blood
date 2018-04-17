@@ -7,9 +7,13 @@
   <p>Uma campanha foi criada pertinho de você!</p>
   <p>Para confirmar sua participação, clique no botão abaixo:</p>
 </div>
+
 <div class='outer'>
-  <a href='https://easy-blood.herokuapp.com/' class='btn-part'>Participar</a>
+
+  <%=link_to 'Participar', campaign_url(@campaign), class: 'btn-part' %>
+
 </div>
+
 <div class='mail-footer'>
   <p><strong id='easy'>Easy blood, te ajudando a salvar vidas.</strong></p>
   <a href='https://easy-blood.herokuapp.com/'><%= cl_image_tag("logo_easy.png", :height=>40, :crop=>"scale") %></a>

@@ -1,12 +1,13 @@
 
-.wrapper {
+.wrapper-campaign {
   background-color: white;
-  height: 70vh;
+  //height: 50vh;
 }
 
 .campaign-details {
-  width: 60%;
-  margin-right: 15px;
+  width: 50%;
+  margin-right: 100px;
+  text-align: left;
 }
 
 .show-campaign {
@@ -15,13 +16,19 @@
   justify-content: space-between;
   h3 {
     color: $pink;
+    text-align: left;
+  }
+  p {
+    color: black;
+    text-align: left;
   }
 }
 
 .map {
   margin-top: 30px;
-  margin-right: 50px;
+  margin-right: 20px;
   margin-left: 50px;
+  width: 50%;
 }
 
 .button-back {
@@ -29,4 +36,17 @@
   margin-right: 50px;
   bottom: 10px;
   float: right;
+}
+
+.btn-text{
+  font-weight: bold;
+  font-family: Sans-serif;
+}
+
+.myBtn {
+  background-color: $pink;
+  float: center;
+  color: white;
+  font-weight: lighter;
+  border-radius: 8px;
 }

@@ -7,16 +7,38 @@
 
 .white-wrapper{
   background-color: white;
-  height: 105vh;
+  height: 100vh;
+  color: $pink;
+  position:relative;
+
+  h3 {
+    text-align: center;
+  }
+
+  .campaigns-text {
+
+    h5, p {
+      text-align: center;
+      color: black;
+    }
+  }
+}
+
+.white-wrapper-campaigns{
+  background-color: white;
+  //height: 120%;
   color: $pink;
   position:relative;
   h3 {
     text-align: center;
   }
 
+  .campaigns-text {
+
   h5, p {
-    text-align: center;
-    color: black;
+      text-align: center;
+      color: black;
+    }
   }
 }
 
@@ -80,6 +102,11 @@
   font-size: 16px;
 }
 
+
+h2 {
+  text-align: center;
+  color: $pink;
+}
 
 
 

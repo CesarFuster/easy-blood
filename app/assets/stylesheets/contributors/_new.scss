@@ -1,19 +1,29 @@
-.wrapper {
+
+.white-wrapper-stripe{
   background-color: white;
+  //height: 80vh;
+  position:relative;
 }
 
+  h5, p {
+      text-align: center;
+      color: black;
+  }
+
+
 .donate-text{
-display: block;
-margin-top:15px;
-font-size: 25px;
-align: center;
+  display: block;
+  color: black;
+  margin-top:15px;
+  font-size: 25px;
+  align: center;
 }
 
 .heart{
-text-align: center;
+  text-align: center;
 }
 
 .row{
   margin-top:40px !important;
-  margin-bottom: 120px !important;
+  margin-bottom: 50px !important;
 }
