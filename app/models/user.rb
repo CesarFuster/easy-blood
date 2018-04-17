@@ -18,7 +18,7 @@ class User < ApplicationRecord
   private
 
   def send_welcome_email
-    UserMailer.welcome(self.id).deliver_now # action de mandar o email de cadastro
+    UserMailer.welcome(self.id).deliver_later # action de mandar o email de cadastro
   end
 
   def campaign_email
