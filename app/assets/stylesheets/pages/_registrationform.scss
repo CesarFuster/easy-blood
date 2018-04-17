@@ -2,6 +2,7 @@
   background-color: #F4F4F4;
   border-radius: 10px;
   padding-top: 5px;
+  margin-left: 10px;
 }
 
 .form-days {
@@ -24,7 +25,7 @@
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.8;
-  width: 150px;
+  width: 140px;
   margin-bottom: 10px;
   &:focus {
     outline: none;
@@ -39,6 +40,10 @@
   opacity: 1;
   text-decoration: none;
   color: #999999;
+}
+
+.actions {
+  margin-bottom: 10px;
 }
 
 
