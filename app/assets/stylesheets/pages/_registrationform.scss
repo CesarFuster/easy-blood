@@ -26,6 +26,9 @@
   opacity: 0.8;
   width: 150px;
   margin-bottom: 10px;
+  &:focus {
+    outline: none;
+  }
   & .selected {
     color: $pink !important;
     border: 1px solid $pink !important;
