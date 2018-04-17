@@ -1,47 +1,90 @@
 <div class="wrapper">
   <div class="container">
-      <h2>Cadastro</h2>
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-5">
+    <h2>Cadastro</h2>
 
+    <div class="row">
+      <!-- Form dados pessoais -->
+      <div class="col-sm-offset-2 col-sm-5">
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
           <p>Dados pessoais:</p>
-
           <%= f.input :email, :label => "E-mail", required: true, autofocus: true %>
           <%= f.input :first_name, :label => "Nome", required: true  %>
           <%= f.input :last_name, :label => "Sobrenome", required: true %>
           <%= f.input :address, :label => "Endereço", required: true, id: 'user_address' %>
           <%= f.input :phone_number, :label => "Telefone" %>
-          <%= f.input :blood_type, :label => "Tipo sanguineo", collection: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] %>
+          <%= f.input :blood_type, :label => "Tipo sanguíneo", collection: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] %>
           <%= f.input :password, :label => "Senha", required: true, hint: ("mínimo de #{@minimum_password_length} caracteres" if @minimum_password_length) %>
           <%= f.input :password_confirmation, :label => "Confirmação de senha", required: true %>
         </div>
-      </div>
-      <div class="col-sm-3">
-        <div>
-          <p>Disponibilidade:</p>
-          <%= f.input :available_monday, :label => "Segunda-feiras", collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
-          <%= f.input :available_tuesday, :label => "Terça-feiras", collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-          <%= f.input :available_wednesday, :label => "Quarta-feiras",collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-          <%= f.input :available_thursday, :label => "Quinta-feiras",collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-          <%= f.input :available_friday, :label => "Sexta-feiras", collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-          <%= f.input :available_saturday, :label => "Sábados", collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
-          <%= f.input :available_sunday, :label => "Domingos", collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
+        <!-- Botão Enviar -->
+        <div class="actions">
+          <%= f.button :submit, "Enviar", class: 'btn-white' %>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-sm-offset-2 col-sm-4">
-          <div class="form-actions">
-            <div>
-              <%= f.button :submit, "Enviar", class: 'btn-white' %>
+      <!-- Form disponibilidade -->
+      <div class="availability col-xs-10 col-sm-3">
+        <div class="form-days">
+          <p>Disponibilidade:</p>
+          <div>
+            <!-- Segunda-feira-->
+            <button class="btn-white-user" data-toggle="collapse" href="#segunda" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Segunda-feira</button>
+            <div class="collapse multi-collapse" id="segunda">
+              <div class="info-form-user">
+                <%= f.input :available_monday, as: :radio_buttons, label: false, collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
+              </div>
+            </div>
+            <!-- Terça-feira-->
+            <button class="btn-white-user" data-toggle="collapse" href="#terça" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Terça-feira</button>
+            <div class="collapse multi-collapse" id="terça">
+              <div class="info-form-user">
+                <%= f.input :available_tuesday, as: :radio_buttons, label: false, collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+              </div>
+            </div>
+            <!-- Quarta-feira-->
+            <button class="btn-white-user" data-toggle="collapse" href="#quarta" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Quarta-feira</button>
+            <div class="collapse multi-collapse" id="quarta">
+              <div class="info-form-user">
+                <%= f.input :available_wednesday, as: :radio_buttons, label: false,collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+              </div>
+            </div>
+            <!-- Quinta-feira-->
+            <button class="btn-white-user" data-toggle="collapse" href="#quinta" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Quinta-feira</button>
+            <div class="collapse multi-collapse" id="quinta">
+              <div class="info-form-user">
+                <%= f.input :available_thursday, as: :radio_buttons, label: false,collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+              </div>
+            </div>
+            <!-- Sexta-feira-->
+            <button class="btn-white-user" data-toggle="collapse" href="#sexta" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Sexta-feira</button>
+            <div class="collapse multi-collapse" id="sexta">
+              <div class="info-form-user">
+                <%= f.input :available_friday, as: :radio_buttons, label: false, collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+              </div>
+            </div>
+            <!-- Sábado -->
+            <button class="btn-white-user" data-toggle="collapse" href="#sabado" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Sábado</button>
+            <div class="collapse multi-collapse" id="sabado">
+              <div class="info-form-user">
+                <%= f.input :available_saturday, as: :radio_buttons, label: false, collection: ['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível' %>
+              </div>
+            </div>
+            <!-- Domingo -->
+            <button class="btn-white-user" data-toggle="collapse" href="#domingo" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Domingo</button>
+            <div class="collapse multi-collapse" id="domingo">
+              <div class="info-form-user">
+                <%= f.input :available_sunday, as: :radio_buttons, label: false, collection:['Indisponível', 'Manhã', 'Tarde', 'Noite'], default: 'Indisponível'%>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <% end %>
-    </div>
+      </div>
   </div>
 </div>
+
+
