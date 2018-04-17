@@ -1,27 +1,26 @@
+<!-- <div class="container">
 <div class="footer">
-  <div class="footer-content hidden-xs">
-    <div>
+
+     <div class="footer-content hidden-xs">
+    <div class="text-center">
       <h3>Easy Blood</h2>
       <ul class="list-footer">
-        <a href="#"><li>Carreiras</li></a>
         <a href="#"><li>Política de Privacidade</li></a>
         <a href="#"><li>Sobre a Empresa</li></a>
       </ul>
     </div>
-    <div>
+    <div class="text-center">
       <h3>Descubra</h2>
       <ul class="list-footer">
         <a href="#"><li>Comunidade</li></a>
         <a href="#"><li>Blog</li></a>
-        <a href="#"><li>Sobre Médico</li></a>
       </ul>
     </div>
-    <div>
+    <div class="text-center">
       <h3>Apoio</h2>
       <ul class="list-footer">
         <a href="#"><li>Doações</li></a>
         <a href="#"><li>Instituições Apoiadores</li></a>
-        <a href="#"><li>Sobre Médico</li></a>
       </ul>
     </div>
   </div>
@@ -31,5 +30,61 @@
     <a href="#"><i class="fa fa-facebook"></i></a>
     <a href="#"><i class="fa fa-twitter"></i></a>
     <a href="#"><i class="fa fa-linkedin"></i></a>
+  </div>
+</div>
+  </div> -->
+
+<!-- new -->
+
+<div class="container-footer">
+
+  <div class="row-footer">
+      <div class="col-sm-offset-1 col-sm-2 ">
+        <div class="row-content">
+          <h3>Easy Blood</h3>
+          <ul class="list-footer">
+            <li><%= link_to "Termos de Uso", '#' %></li>
+            <li><%= link_to "Politica de Privacidade", '#' %></li>
+            <li><%= link_to "Sobre nós", '#' %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-sm-2 ">
+        <div class="row-content">
+          <h3>Descubra</h3>
+            <ul class="list-footer">
+              <li><%= link_to "Campanhas", '#' %></li>
+              <li><%= link_to "Seja um apoiador", '#' %></li>
+            </ul>
+        </div>
+      </div>
+
+      <div class="col-sm-2 ">
+        <div class="row-content">
+          <h3>Apoio</h3>
+          <ul class="list-footer">
+          <% if !user_signed_in? %>
+            <li><%= link_to t(".sign_in", default: "Login"), '#' %></li>
+            <li><%= link_to "Cadastre-se", '#' %></li>
+            <li><%= link_to "Esqueci a senha", '#' %></li>
+          <% else %>
+            <li><%= link_to "Meu perfil", '#' %></li>
+            <li>
+            <%= link_to '#', method: :delete do %>
+            <%= t(".sign_out", default: "Log out") %>
+          <% end %></li>
+          <% end %></ul>
+        </div>
+      </div>
+    <div class="col-sm-5 col-sm-2 links-wrapper">
+      <div class="row-links">
+        <a href="#"><i class="fa fa-github"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+      </div>
+    </div>
   </div>
 </div>
