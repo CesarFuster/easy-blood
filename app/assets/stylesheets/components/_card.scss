@@ -1,56 +1,76 @@
 .card {
-  margin-top:20px;
-  height: 175px;
-  //text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-image: image-url('card_default_pink.png');
-  background-size: cover !important;
-  background-position: center;
-  color: $pink;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  position: relative;
-  border-radius: 10px;
+margin-top:20px;
+height: 175px;
+//text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+background-image: image-url('card_default_pink.png');
+background-size: cover !important;
+background-position: center;
+color: $pink;
+box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+position: relative;
+border-radius: 10px;
 }
 
 .card-category {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 22px;
-  text-transform: uppercase;
-  color: white;
+position: absolute;
+top: 10px;
+left: 10px;
+font-size: 22px;
+text-transform: uppercase;
+color: white;
 }
 .card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: white;
+position: absolute;
+bottom: 10px;
+left: 10px;
+color: white;
 }
 .card-description h2 {
-  font-size: 24px;
-  color: white;
-  text-align: left;
+font-size: 24px;
+color: white;
+text-align: left;
 }
 .card-description p {
-  font-size: 14px;
-  //opacity: 0.7;
-  font-weight: lighter;
-  color: black;
-  background-color: white;
-  padding: 10px;
-  text-align: left;
-  }
+font-size: 14px;
+//opacity: 0.7;
+font-weight: lighter;
+color: black;
+background-color: white;
+padding: 5px;
+text-align: left;
+}
 
 .card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
+position: absolute;
+top: 0;
+bottom: 0;
+right: 0;
+width: 100%;
+z-index: 2;
+background: black;
+opacity: 0;
 }
 
 .card-link:hover {
-  opacity: 0.1;
+opacity: 0.1;
+}
+
+.card-user {
+position: absolute;
+right: 10px;
+top: 10px;
+width: 40px;
+border-radius: 50%;
+}
+
+.card-about {
+background-image: none !important;
+background-size: cover !important;
+background-color: #8785A2 !important;
+}
+
+.card-about h2 {
+font-size: 16px;
+color: black;
+text-align: center;
 }
