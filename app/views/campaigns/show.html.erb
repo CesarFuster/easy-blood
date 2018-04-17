@@ -9,9 +9,10 @@
         <p>Estamos muito felizes em anunciar mais uma campanha com <%= @campaign.institution.name %>. Isso será possível por contar com centenas de pessoas que se colocaram à disposição em participar conforme a sua disponibilidade.</p>
         <p>Caso o local e data sejam convenientes para você, participe. Caso contrário, faça seu cadastro e informe o melhor local, assim como os dias da semana e horários. Convide amigos e familiares e torça para juntos criarem uma nova campanha!</p>
       </div>
+
+      <%= social_share_button_tag(@campaign.institution.name) %>
       <!-- Mapa com localização do evento -->
       <div
-
           id="map-id"
           style="width: 400px; height: 270px;"
           data-marker="<%= @marker.to_json %>">
