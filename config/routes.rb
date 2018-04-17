@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => {:registrations => "users/registrations"}
   root to: 'pages#home'
-  default_url_options :host => "https://easy-blood.herokuapp.com"
+  # default_url_options :host => "https://easy-blood.herokuapp.com"
   get "/profile", to: 'pages#profile'
 
   resources :contributors, only: [:new, :create]
