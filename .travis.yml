@@ -9,7 +9,7 @@ before_install:
 - sudo apt-get update
 - sudo apt-get install google-chrome-stable
 addons:
-  postgresql: '9.6'
+  postgresql: '10.2'
 before_script:
   - psql -c 'create database easy-blood_test;' -U postgres
 script:
