@@ -1,4 +1,4 @@
-class UsersCampaign
+ class UsersCampaign
 
 # metodo de classe que ira rodar o campanha e o mailing de campanha depois que o usuario cadastrar
 def self.run
