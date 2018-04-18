@@ -6,8 +6,8 @@ class User < ApplicationRecord
   has_one :medical_record
   has_many :donations
   has_many :campaigns, through: :donations
-  # after_create :send_welcome_email #callback de email de cadastro
-  # after_create :campaign_email #callback de email de campanha
+  after_create :send_welcome_email #callback de email de cadastro
+  after_create :campaign_email #callback de email de campanha
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 

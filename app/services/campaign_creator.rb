@@ -3,7 +3,7 @@ module CampaignCreator
 
   def self.perform(cpoint, campaign_limit)
     users = User.near(cpoint.address, CAMPAIGN_RANGE)
-    return unless users.length >= campaign_limit
+    return unless users.length > campaign_limit
     return unless cpoint.campaigns.active.empty?
     puts "campaign created ********************************"
     campaign = cpoint.campaigns.build(
@@ -16,7 +16,7 @@ module CampaignCreator
     campaign.save!
   end
 
-  def self.cpoint_for_user(user)
-    Cpoint.near(user.address, CAMPAIGN_RANGE).first
-  end
+  # def self.cpoint_for_user(user)
+  #   Cpoint.near(user.address, CAMPAIGN_RANGE).first
+  # end
 end
