@@ -1,11 +1,7 @@
-
-
-
-
 </script><div class="wrapper">
   <div class="container">
     <h2>Sobre nós</h2>
-    <p>Durante duas semanas embarcamos nesse barco em prol de uma causa humanitária. Um time bastante unido e que comemorava cada feature desenvolvida. Abaixo, um pouco mais sobre o time por trás da EasyBlood.</p>
+    <p>Durante duas semanas embarcamos em um projeto de causa humanitária. Um time bastante unido e que comemorava cada feature desenvolvida. Abaixo, um pouco mais sobre o time por trás da EasyBlood.</p>
     <div class="row">
       <% @team.each do |key, value| %>
       <div class="col-xs-12 col-sm-3">
@@ -15,14 +11,11 @@
           </div>
           <div class="card-description">
             <h2>"<%= value[:phrase].to_s %>"</h2>
-
             <p>
-<%= mail_to "#{value[:email].to_s}" %>
+              <%= mail_to "#{value[:email].to_s}" %>
             </p>
-
-
           </div>
-            <%= cl_image_tag("#{key.downcase}.png", class: "card-user") %>
+          <%= cl_image_tag("#{key.downcase}.png", class: "card-user") %>
         </div>
       </div>
       <% end %>

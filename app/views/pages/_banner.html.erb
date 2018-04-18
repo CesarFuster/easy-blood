@@ -4,13 +4,13 @@
     <h1>Porque doar é fácil</h1>
     <p>Quanto mais cadastros, maiores as chances de uma campanha perto de você</p>
     <%= link_to "Quero doar", new_user_registration_path, class: "btn-pink-lg" %>
-
-
-  <div class="odometer">
-    <p><span class="number"><%= count_users*49 + 2000 %></span> doadores.
-    <span class="number"><%= count_campaign %></span> Campanhas realizadas.</p>
+    <div class="odometer">
+      <p>
+        <span class="number"><%= count_users*49 + 2000 %></span> doadores.
+        <span class="number"><%= count_campaign %></span> Campanhas realizadas.
+      </p>
+    </div>
   </div>
-</div>
 </div>
 
 
