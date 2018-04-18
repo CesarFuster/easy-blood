@@ -23,6 +23,8 @@ class User < ApplicationRecord
   end
 
   def campaign_email
-    UsersCampaign.run #action de verificar criar campanha e mailing de campanha
+    cpoint = Cpoint.near(self.address, CampaignCreator::CAMPAIGN_RANGE).first
+    CampaignCreator.perform(cpoint, 1)
+    CampaignMailer.new_campaign(self.id) #action de verificar criar campanha e mailing de campanha
   end
 end

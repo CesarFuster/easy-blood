@@ -2,12 +2,21 @@ module CampaignCreator
   CAMPAIGN_RANGE = 3
 
   def self.perform(cpoint, campaign_limit)
-    return unless User.near(cpoint.address, CAMPAIGN_RANGE).length >= campaign_limit
+    users = User.near(cpoint.address, CAMPAIGN_RANGE)
+    return unless users.length >= campaign_limit
+    return unless cpoint.campaigns.active.empty?
+    puts "campaign created ********************************"
     campaign = cpoint.campaigns.build(
-      start_date: (Time.zone.today + 5),
-      end_date: (Time.zone.today + 10),
-      location: cpoint.address
+      start_date: (Time.zone.now ),
+      end_date: (Time.zone.now + 1),
+      location: cpoint.address,
+      users: users,
+      institution: Institution.all.sample
     )
     campaign.save!
+  end
+
+  def self.cpoint_for_user(user)
+    Cpoint.near(user.address, CAMPAIGN_RANGE).first
   end
 end
