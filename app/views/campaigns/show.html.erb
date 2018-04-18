@@ -16,8 +16,8 @@
       data-marker="<%= @marker.to_json %>">
     </div>
   </div>
-
   <!-- Botão para confirmar presença -->
+
   <% if user_signed_in? %>
     <% if UsersCampaign.get_data[:users].any? { |user| user.id == current_user.id } %>
     <div class="row">
@@ -32,6 +32,7 @@
     <% end %>
   <% end %>
     </div>
+    <div class="row"> </div>
   </div>
 </div>
 
