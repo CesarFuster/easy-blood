@@ -1,5 +1,6 @@
 class Campaign < ApplicationRecord
   belongs_to :institution, optional: true
+  has_many :donations
   has_many :users, through: :donations
   belongs_to :cpoint
   # after_create :campaign_mailing
