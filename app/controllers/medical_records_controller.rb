@@ -10,7 +10,7 @@ class MedicalRecordsController < ApplicationController
 
   def create
     @medical_record = current_user.build_medical_record(params_medical)
-    if current_user.save
+    if @medical_record.save
       redirect_to root_path
     else
       render :new

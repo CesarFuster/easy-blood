@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   # default_url_options :host => "https://easy-blood.herokuapp.com"
 
   resources :contributors, only: [:new, :create]
-  resources :medical_records, only: [:show, :new, :create]
-  resources :medical_records, only: [:edit, :update, :destroy]
+
+  get 'thanks', to: 'contributors#thanks', as: 'thanks'
+  
+  resources :medical_records
   resources :campaigns
   resources :institutions
 
