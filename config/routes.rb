@@ -7,9 +7,7 @@ Rails.application.routes.draw do
 
   resources :contributors, only: [:new, :create]
   get 'thanks', to: 'contributors#thanks', as: 'thanks'
-  resources :medical_records, only: [:show, :new, :create]
-
-  resources :medical_records, only: [:edit, :update, :destroy]
+  resources :medical_records
   resources :campaigns
   resources :institutions
 
