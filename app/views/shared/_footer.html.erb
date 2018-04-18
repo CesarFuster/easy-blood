@@ -1,41 +1,3 @@
-<!-- <div class="container">
-<div class="footer">
-
-     <div class="footer-content hidden-xs">
-    <div class="text-center">
-      <h3>Easy Blood</h2>
-      <ul class="list-footer">
-        <a href="#"><li>Política de Privacidade</li></a>
-        <a href="#"><li>Sobre a Empresa</li></a>
-      </ul>
-    </div>
-    <div class="text-center">
-      <h3>Descubra</h2>
-      <ul class="list-footer">
-        <a href="#"><li>Comunidade</li></a>
-        <a href="#"><li>Blog</li></a>
-      </ul>
-    </div>
-    <div class="text-center">
-      <h3>Apoio</h2>
-      <ul class="list-footer">
-        <a href="#"><li>Doações</li></a>
-        <a href="#"><li>Instituições Apoiadores</li></a>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-links">
-    <a href="#"><i class="fa fa-github"></i></a>
-    <a href="#"><i class="fa fa-instagram"></i></a>
-    <a href="#"><i class="fa fa-facebook"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
-  </div>
-</div>
-  </div> -->
-
-<!-- new -->
-
 <div class="container-footer">
   <div class="row-footer">
     <div class="hiding hidden-sm hidden-xs">
@@ -43,9 +5,9 @@
         <div class="row-content">
           <h3>Easy Blood</h3>
           <ul class="list-footer">
-            <li><%= link_to "Termos de Uso", '#' %></li>
-            <li><%= link_to "Politica de Privacidade", '#' %></li>
-            <li><%= link_to "Sobre nós", '#' %></li>
+            <li><%= link_to "Termos de Uso", terms_path %></li>
+            <li><%= link_to "Politica de Privacidade", privacy_path %></li>
+            <li><%= link_to "Sobre nós", about_us_path %></li>
           </ul>
         </div>
       </div>
@@ -54,8 +16,8 @@
         <div class="row-content">
           <h3>Descubra</h3>
             <ul class="list-footer">
-              <li><%= link_to "Campanhas", '#' %></li>
-              <li><%= link_to "Seja um apoiador", '#' %></li>
+              <li><%= link_to "Campanhas", campaigns_path %></li>
+              <li><%= link_to "Seja um apoiador", new_contributor_path %></li>
             </ul>
         </div>
       </div>
@@ -65,13 +27,13 @@
           <h3>Apoio</h3>
           <ul class="list-footer">
           <% if !user_signed_in? %>
-            <li><%= link_to t(".sign_in", default: "Login"), '#' %></li>
-            <li><%= link_to "Cadastre-se", '#' %></li>
-            <li><%= link_to "Esqueci a senha", '#' %></li>
+            <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path %></li>
+            <li><%= link_to "Cadastre-se", new_user_registration_path %></li>
+            <li><%= link_to "Esqueci a senha", new_user_password_path %></li>
           <% else %>
-            <li><%= link_to "Meu perfil", '#' %></li>
+            <li><%= link_to "Meu perfil", profile_path %></li>
             <li>
-            <%= link_to '#', method: :delete do %>
+            <%= link_to destroy_user_session_path, method: :delete do %>
             <%= t(".sign_out", default: "Log out") %>
           <% end %></li>
           <% end %></ul>
