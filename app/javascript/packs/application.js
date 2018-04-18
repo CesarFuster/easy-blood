@@ -10,4 +10,3 @@ function message() {
     document.getElementById("confirmMe").innerHTML = 'Presença confirmada';
     document.getElementById("confirmMe").removeEventListener('click', message);
 }
-
