@@ -6,7 +6,7 @@ def self.run
   if !new_hash[:users].empty?
     campaign = CampaignCreator.run(new_hash)
     new_hash[:users].each do |user|
-      CampaignMailer.new_campaign(user, campaign).deliver_now
+      CampaignMailer.new_campaign(user.id, campaign).deliver_later
     end
   end
 end

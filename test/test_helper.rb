@@ -18,3 +18,5 @@ Capybara.register_driver :headless_chrome do |app|
 end
 Capybara.save_path = Rails.root.join('tmp/capybara')
 Capybara.javascript_driver = :headless_chrome
+Capybara.server_port = 31337
+Capybara.app_host = "http://localhost:31337"

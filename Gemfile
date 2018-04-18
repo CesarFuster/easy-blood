@@ -9,7 +9,6 @@ gem 'puma'
 gem 'rails', '5.1.6'
 gem 'redis'
 gem 'cloudinary'
-gem 'social-share-button', '0.2.1'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
@@ -21,6 +20,8 @@ gem 'webpacker'
 gem 'geocoder'
 gem 'stripe'
 gem 'rails-i18n'
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
