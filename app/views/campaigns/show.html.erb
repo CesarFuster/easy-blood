@@ -6,9 +6,7 @@
         <p><strong> <%= @campaign.start_date.strftime("%d/%m") %> a <%= @campaign.end_date.strftime("%d/%m") %> </strong> </p>
         <p>Local: <%= @campaign.cpoint.address %></p>
         <h4>Doar é fácil. Participe!</h4>
-        <p>Estamos muito felizes em anunciar mais uma campanha com <%= @campaign.institution.name %>. Isso será possível por contarmos com centenas de pessoas que se colocaram à disposição em participar. Compartilhe e ajude com a nossa causa.</p>
-        <!-- Social-button facebook -->
-        <p><%= social_share_button_tag('Compartilhe', :url => campaign_path(@campaign), desc: @campaign.institution.name) %></p>
+        <p>Estamos muito felizes em anunciar mais uma campanha com <%= @campaign.institution.name %>. Isso será possível por contarmos com centenas de pessoas que se colocaram à disposição em participar. Participe e ajude com a nossa causa.</p>
       </div>
 
       <!-- Mapa com localização do evento -->
