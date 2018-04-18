@@ -1,7 +1,6 @@
 
 .wrapper-campaign {
   background-color: white;
-  //height: 50vh;
 }
 
 .campaign-details {
@@ -24,11 +23,8 @@
   }
 }
 
-.map {
+#map-id {
   margin-top: 30px;
-  margin-right: 20px;
-  margin-left: 50px;
-  width: 50%;
 }
 
 .button-back {
@@ -38,15 +34,21 @@
   float: right;
 }
 
-.btn-text{
-  font-weight: bold;
-  font-family: Sans-serif;
+.buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
 .myBtn {
+  font-weight: bold;
+  font-family: Sans-serif;
   background-color: $pink;
-  float: center;
+  //float: center;
   color: white;
-  font-weight: lighter;
+  //font-weight: lighter;
   border-radius: 8px;
+  margin: 10px;
+  padding: 10px 15px;
 }
+
+

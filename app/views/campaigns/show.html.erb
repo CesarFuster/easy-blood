@@ -6,35 +6,32 @@
         <p><strong> <%= @campaign.start_date.strftime("%d/%m") %> a <%= @campaign.end_date.strftime("%d/%m") %> </strong> </p>
         <p>Local: <%= @campaign.cpoint.address %></p>
         <h4>Doar é fácil. Participe!</h4>
-        <p>Estamos muito felizes em anunciar mais uma campanha com <%= @campaign.institution.name %>. Isso será possível por contar com centenas de pessoas que se colocaram à disposição em participar conforme a sua disponibilidade.</p>
-        <p>Caso o local e data sejam convenientes para você, participe. Caso contrário, faça seu cadastro e informe o melhor local, assim como os dias da semana e horários. Convide amigos e familiares e torça para juntos criarem uma nova campanha!</p>
+        <p>Estamos muito felizes em anunciar mais uma campanha com <%= @campaign.institution.name %>. Isso será possível por contarmos com centenas de pessoas que se colocaram à disposição em participar. Participe e ajude com a nossa causa.</p>
       </div>
+
       <!-- Mapa com localização do evento -->
       <div
-
-          id="map-id"
-          style="width: 400px; height: 270px;"
-          data-marker="<%= @marker.to_json %>">
-      </div>
+      id="map-id"
+      style="width: 400px; height: 270px;"
+      data-marker="<%= @marker.to_json %>">
     </div>
+  </div>
 
-    <!-- Botão para confirmar presença -->
-
-    <% if user_signed_in? %>
-      <% if UsersCampaign.get_data[:users].any? { |user| user.id == current_user.id } %>
-<!--         <%= link_to 'Voltar', :back, class: "btn-bege" %> -->
-        <div class="btn-text">
-          <div class="presence-confirm">
-            <button class="myBtn" id="confirmMe">Conte comigo!</button>
-          </div>
+  <!-- Botão para confirmar presença -->
+  <% if user_signed_in? %>
+    <% if UsersCampaign.get_data[:users].any? { |user| user.id == current_user.id } %>
+    <div class="row">
+      <div class="buttons">
+        <div class="presence-confirm">
+          <button class="myBtn" id="confirmMe">Conte comigo!</button>
         </div>
-
-      <% end %>
+        <div class="button-back">
+          <%= link_to 'Voltar', :back, class: "btn-white" %>
+        </div>
+      </div>
     <% end %>
+  <% end %>
+    </div>
+  </div>
+</div>
 
-  </div>
-  <div class="button-back">
-    <%= link_to 'Voltar', :back, class: "btn-white" %>
-  </div>
-</div>
-</div>
