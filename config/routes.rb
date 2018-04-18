@@ -7,12 +7,10 @@ Rails.application.routes.draw do
   resources :contributors, only: [:new, :create]
 
   get 'thanks', to: 'contributors#thanks', as: 'thanks'
-  
+
   resources :medical_records
   resources :campaigns
   resources :institutions
-
-  get '/thanks', to: 'contributors#thanks', as: 'thanks'
   get '/profile', to: 'pages#profile'
   get '/404', to: 'errors#error_404'
   get '/422', to: 'errors#error_422'
