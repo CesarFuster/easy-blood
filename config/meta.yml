@@ -1,0 +1,5 @@
+meta_product_name: "EasyBlood"
+meta_title: "EasyBlood - Porque doar é fácil"
+meta_description: "Quanto mais cadastros, maiores as chances de uma campanha perto de você"
+meta_image: "logo_easy.png"                       # should exist in `app/assets/images/`
+twitter_account: "@socialeasyblood"   # required for Twitter Cards
