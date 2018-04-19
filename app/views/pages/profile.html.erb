@@ -1,70 +1,70 @@
 <div class="wrapper">
   <div class="container">
-
-    <div class="profile">
-      <div class="blood-icon">
-        <h2></h2>
-        <% if current_user.blood_type == "A+"%>
-        <%= image_tag 'A.png', height: 120 %>
-        <% elsif current_user.blood_type == "A-"%>
-        <%= image_tag 'Anegativo.png', height: 120 %>
-        <% elsif current_user.blood_type == "O+"%>
-        <%= image_tag 'O.png', height: 120 %>
-        <% elsif current_user.blood_type == "O-"%>
-        <%= image_tag 'Onegativo.png', height: 120 %>
-        <% elsif current_user.blood_type == "B+"%>
-        <%= image_tag 'B.png', height: 120 %>
-        <% elsif current_user.blood_type == "B-"%>
-        <%= image_tag 'Bnegativo.png', height: 120 %>
-        <% elsif current_user.blood_type == "AB+"%>
-        <%= image_tag 'AB.png', height: 120 %>
-        <% elsif current_user.blood_type == "AB-"%>
-        <%= image_tag 'ABnegativo.png', height: 120 %>
-        <% else %>
-        <% end %>
-      </div>
-      <div>
-        <h3>Dados pessoais</h3>
-        <p><strong> <%= current_user.first_name.capitalize %>  <%= current_user.last_name.capitalize %> </strong></p>
-        <p>email: <%= current_user.email %> </p>
-        <p>Fone: <%= current_user.phone_number %> </p>
-        <p>End.: <%= current_user.address %> </p>
-        <p><strong>Disponibilidade</strong></p>
-        <% if current_user.available_monday != 'Indisponível'%>
-        <p>Segunda: <%=  current_user.available_monday%></p>
-        <% end %>
-        <% if current_user.available_tuesday != 'Indisponível'%>
-        <p>Terça: <%= current_user.available_tuesday %></p>
-        <% end %>
-        <% if current_user.available_wednesday != 'Indisponível'%>
-        <p>Quarta: <%= current_user.available_wednesday %></p>
-        <% end %>
-        <% if current_user.available_thursday != 'Indisponível'%>
-        <p>Quinta: <%= current_user.available_thursday %></p>
-        <% end %>
-        <% if current_user.available_friday != 'Indisponível'%>
-        <p>Sexta: <%= current_user.available_friday %></p>
-        <% end %>
-        <% if current_user.available_saturday != 'Indisponível'%>
-        <p>Sábado: <%= current_user.available_saturday %></p>
-        <% end %>
-        <% if current_user.available_sunday != 'Indisponível'%>
-        <p>Domingo: <%= current_user.available_sunday %></p>
-        <% end %>
-      </div>
-      <div>
-        <% if current_user.medical_record %>
-        <h3>Registro Médico</h3>
-        <p>Data de Registro: <%= current_user.medical_record.created_at %> </p>
-        <p>Atualização: <%= current_user.medical_record.updated_at %> </p>
-        <p>Peso(kg): <%= current_user.medical_record.weight %> </p>
-        <p>Altura(m):<%= current_user.medical_record.height %> </p>
-        <p>Data de Nasc.: <%= current_user.medical_record.birth_date%> </p>
-        <p>Doação mais recente: <%= current_user.medical_record.last_donation %> </p>
-        <% end %>
+    <div class="row">
+      <div class="profile">
+        <div class="blood-icon col-xs-12 col-sm-4">
+          <h2></h2>
+          <% if current_user.blood_type == "A+"%>
+          <%= image_tag 'A.png', height: 120 %>
+          <% elsif current_user.blood_type == "A-"%>
+          <%= image_tag 'Anegativo.png', height: 120 %>
+          <% elsif current_user.blood_type == "O+"%>
+          <%= image_tag 'O.png', height: 120 %>
+          <% elsif current_user.blood_type == "O-"%>
+          <%= image_tag 'Onegativo.png', height: 120 %>
+          <% elsif current_user.blood_type == "B+"%>
+          <%= image_tag 'B.png', height: 120 %>
+          <% elsif current_user.blood_type == "B-"%>
+          <%= image_tag 'Bnegativo.png', height: 120 %>
+          <% elsif current_user.blood_type == "AB+"%>
+          <%= image_tag 'AB.png', height: 120 %>
+          <% elsif current_user.blood_type == "AB-"%>
+          <%= image_tag 'ABnegativo.png', height: 120 %>
+          <% else %>
+          <% end %>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <h3>Dados pessoais</h3>
+          <p><strong> <%= current_user.first_name.capitalize %>  <%= current_user.last_name.capitalize %> </strong></p>
+          <p>email: <%= current_user.email %> </p>
+          <p>Fone: <%= current_user.phone_number %> </p>
+          <p>End.: <%= current_user.address %> </p>
+          <p><strong>Disponibilidade</strong></p>
+          <% if current_user.available_monday != 'Indisponível'%>
+          <p>Segunda: <%=  current_user.available_monday%></p>
+          <% end %>
+          <% if current_user.available_tuesday != 'Indisponível'%>
+          <p>Terça: <%= current_user.available_tuesday %></p>
+          <% end %>
+          <% if current_user.available_wednesday != 'Indisponível'%>
+          <p>Quarta: <%= current_user.available_wednesday %></p>
+          <% end %>
+          <% if current_user.available_thursday != 'Indisponível'%>
+          <p>Quinta: <%= current_user.available_thursday %></p>
+          <% end %>
+          <% if current_user.available_friday != 'Indisponível'%>
+          <p>Sexta: <%= current_user.available_friday %></p>
+          <% end %>
+          <% if current_user.available_saturday != 'Indisponível'%>
+          <p>Sábado: <%= current_user.available_saturday %></p>
+          <% end %>
+          <% if current_user.available_sunday != 'Indisponível'%>
+          <p>Domingo: <%= current_user.available_sunday %></p>
+          <% end %>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <% if current_user.medical_record %>
+          <h3>Registro Médico</h3>
+          <p>Data de Registro: <%= current_user.medical_record.created_at.strftime("%d/%m/%y") %> </p>
+          <p>Atualização: <%= current_user.medical_record.updated_at.strftime("%d/%m/%y") %> </p>
+          <p>Peso(kg): <%= current_user.medical_record.weight %> </p>
+          <p>Altura(m):<%= current_user.medical_record.height %> </p>
+          <p>Data de Nasc.: <%= current_user.medical_record.birth_date.strftime("%d/%m/%y") %> </p>
+          <p>Doação mais recente: <%= current_user.medical_record.last_donation.strftime("%d/%m/%y") %> </p>
+          <% end %>
+        </div>
       </div>
     </div>
-
   </div>
 </div>
 
