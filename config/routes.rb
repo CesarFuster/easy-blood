@@ -12,12 +12,12 @@ Rails.application.routes.draw do
   resources :campaigns
   resources :institutions
   get '/profile', to: 'pages#profile'
-  get '/404', to: 'errors#error_404'
-  get '/422', to: 'errors#error_422'
-  get '/500', to: 'errors#error_500'
   get '/about_us', to: 'pages#about_us'
   get '/terms', to: 'pages#terms'
   get '/privacy', to: 'pages#privacy'
+  get 'errors/error_404'
+  get 'errors/error_422'
+  get 'errors/error_500'
 
 
 end
