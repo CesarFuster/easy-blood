@@ -1,14 +1,27 @@
-class CampaignCreator
-  #cria campanha depois se o check do contador de pessoas ao redor do cpoint for true
-  def self.run(new_hash)
-      puts "Campaign created  *********************************"
-      campaign = Campaign.create(
-        institution: Institution.all.sample,
-        cpoint: new_hash[:cpoint].first,
-        location: new_hash[:cpoint].first.address,
-        start_date: (Date.today),
-        end_date: (Date.today + 1)
-      )
-      campaign
+module CampaignCreator
+  CAMPAIGN_RANGE = 3
+
+  def self.perform(cpoint, campaign_limit)
+    # queue_as :mailer
+    return unless !cpoint.nil?
+    users = User.near(cpoint.address, CAMPAIGN_RANGE)
+    return unless users.length > campaign_limit
+    return unless cpoint.campaigns.active.empty?
+    puts "campaign created ********************************"
+    campaign = cpoint.campaigns.build(
+      start_date: (Time.zone.now ),
+      end_date: (Time.zone.now + 90000),
+      location: cpoint.address,
+      users: users,
+      institution: Institution.all.sample
+    )
+    campaign.save!
+      users.each do |user|
+       CampaignMailer.new_campaign(user.id).deliver_later
+     end
   end
+
+  # def self.cpoint_for_user(user)
+  #   Cpoint.near(user.address, CAMPAIGN_RANGE).first
+  # end
 end

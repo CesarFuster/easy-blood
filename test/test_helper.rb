@@ -20,3 +20,21 @@ Capybara.save_path = Rails.root.join('tmp/capybara')
 Capybara.javascript_driver = :headless_chrome
 Capybara.server_port = 31337
 Capybara.app_host = "http://localhost:31337"
+
+# Geocoder.configure(:lookup => :test)
+
+# Geocoder::Lookup::Test.set_default_stub(
+#   [
+#     {
+#       'latitude' => -23.5566614,
+#       'longitude' => -46.6860885,
+#       'address' => {
+#         'road' => 'R. Gonçalo Afonso',
+#         'house_number' => '',
+#         'postcode' => '05436',
+#         'town' => 'São Paulo',
+#       },
+#       'type' => 'route',
+#     }
+#   ]
+# )
