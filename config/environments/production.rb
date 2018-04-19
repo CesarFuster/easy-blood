@@ -3,7 +3,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   # ATUALIZAR ENDEREÇO DO HEROKU
-  config.action_mailer.default_url_options = { host: "https://easy-blood.herokuapp.com" }
+  config.action_mailer.default_url_options = { host: "http://www.easyblood.com.br" }
 
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = false
