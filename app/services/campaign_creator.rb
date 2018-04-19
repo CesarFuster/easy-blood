@@ -2,6 +2,7 @@ module CampaignCreator
   CAMPAIGN_RANGE = 3
 
   def self.perform(cpoint, campaign_limit)
+    return unless !cpoint.nil?
     users = User.near(cpoint.address, CAMPAIGN_RANGE)
     return unless users.length > campaign_limit
     return unless cpoint.campaigns.active.empty?
