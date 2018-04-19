@@ -8,7 +8,7 @@ module CampaignCreator
     puts "campaign created ********************************"
     campaign = cpoint.campaigns.build(
       start_date: (Time.zone.now ),
-      end_date: (Time.zone.now + 1),
+      end_date: (Time.zone.now + 90000),
       location: cpoint.address,
       users: users,
       institution: Institution.all.sample
