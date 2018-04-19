@@ -28,6 +28,6 @@ maria = User.create(email: 'm@gmail.com', first_name: 'maria', last_name: 'Gaspa
 puts "Seeding 1 user - google campus..."
 marcos = User.create(email: 'marcos@gmail.com', first_name: 'Marcos', last_name: 'Gonçalves', address: 'R. Mario Amaral, 50, São Paulo', phone_number: '9999-9999', blood_type: 'A-', available_sunday: 'manhã', password: '123456', password_confirmation: '123456')
 #USER PRA DEMO GOOGLE CAMPUS
-roberto = User.create(email: 'easybloodteam@gmail.com', first_name: 'Roberto', last_name: 'Le Wagon', address: 'Rua Coronel Oscar Porto, 33, São Paulo', phone_number: '9999-9999', blood_type: 'A+', available_sunday: 'manhã', password: '123456', password_confirmation: '123456')
+# roberto = User.create(email: 'easybloodteam@gmail.com', first_name: 'Roberto', last_name: 'Le Wagon', address: 'Rua Coronel Oscar Porto, 33, São Paulo', phone_number: '9999-9999', blood_type: 'A+', available_sunday: 'manhã', password: '123456', password_confirmation: '123456')
 
 puts "Finished!"

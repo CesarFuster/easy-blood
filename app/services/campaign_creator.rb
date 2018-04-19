@@ -2,6 +2,7 @@ module CampaignCreator
   CAMPAIGN_RANGE = 3
 
   def self.perform(cpoint, campaign_limit)
+    # queue_as :mailer
     return unless !cpoint.nil?
     users = User.near(cpoint.address, CAMPAIGN_RANGE)
     return unless users.length > campaign_limit
@@ -15,6 +16,9 @@ module CampaignCreator
       institution: Institution.all.sample
     )
     campaign.save!
+      users.each do |user|
+       CampaignMailer.new_campaign(user.id).deliver_later
+     end
   end
 
   # def self.cpoint_for_user(user)

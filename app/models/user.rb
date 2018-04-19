@@ -29,6 +29,6 @@ class User < ApplicationRecord
         cpoint = ""
     end
     CampaignCreator.perform(cpoint, 1)
-    CampaignMailer.new_campaign(self.id).deliver_later #action de verificar criar campanha e mailing de campanha
+   #action de verificar criar campanha e mailing de campanha
   end
 end
