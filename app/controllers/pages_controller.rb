@@ -6,10 +6,10 @@ class PagesController < ApplicationController
     @campaigns = Campaign.where("end_date > ?", Date.today).order(:start_date).first(6)
     @users = User.where.not(latitude: nil, longitude: nil)
 
-    @markers = Cpoint.all.map do |user|
+    @markers = Campaign.all.map do |campaign|
       {
-        lat: user.latitude,
-        lng: user.longitude
+        lat: campaign.users.first.latitude,
+        lng: campaign.users.first.longitude
       }
     end
   end
