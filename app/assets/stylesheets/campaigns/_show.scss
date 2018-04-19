@@ -4,15 +4,11 @@
 }
 
 .campaign-details {
-  width: 50%;
-  margin-right: 100px;
   text-align: left;
 }
 
 .show-campaign {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  height: 60vh;
   h3 {
     color: $pink;
     text-align: left;
@@ -24,31 +20,23 @@
 }
 
 #map-id {
-  margin-top: 30px;
-}
-
-.button-back {
-  margin-top: 20px;
-  margin-right: 50px;
-  bottom: 10px;
-  float: right;
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-between;
+  margin-top: 10px;
 }
 
 .myBtn {
   font-weight: bold;
   font-family: Sans-serif;
   background-color: $pink;
-  //float: center;
   color: white;
-  //font-weight: lighter;
   border-radius: 8px;
-  margin: 10px;
   padding: 10px 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.button-back {
+  float: right;
+  display: block;
 }
 
 
