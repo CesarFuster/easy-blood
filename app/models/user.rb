@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_one :medical_record
+  has_many :donations
   has_many :campaigns, through: :donations
   after_create :send_welcome_email #callback de email de cadastro
   after_create :campaign_email #callback de email de campanha
@@ -22,6 +23,12 @@ class User < ApplicationRecord
   end
 
   def campaign_email
-    UsersCampaign.run #action de verificar criar campanha e mailing de campanha
+    if !Cpoint.near(self.address, CampaignCreator::CAMPAIGN_RANGE).nil?
+      cpoint = Cpoint.near(self.address, CampaignCreator::CAMPAIGN_RANGE).first
+      else
+        cpoint = ""
+    end
+    CampaignCreator.perform(cpoint, 1)
+   #action de verificar criar campanha e mailing de campanha
   end
 end
