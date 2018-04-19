@@ -2,7 +2,7 @@
 
 <div class="email-message">
 
-  <h2>Olá <%= @user[:first_name] %>,</h2>
+  <h2 style="color:#F12B6B">Olá <%= @user[:first_name] %>,</h2>
 
   <p>Gostaríamos de agradecer sua generosidade em fazer parte da <strong id='easy'>Easy Blood</strong>.</p>
   <p>Para sua maior comodidade, lhe avisaremos quando uma campanha de doação estiver por perto.</p>
@@ -10,32 +10,7 @@
 </div>
 <div class='mail-footer'>
   <p><strong id='easy'>Easy blood, te ajudando a salvar vidas.</strong></p>
-  <a href='https://easy-blood.herokuapp.com/'><%= cl_image_tag("logo_easy.png", :height=>40, :crop=>"scale") %></a>
+  <a href='www.easyblood.com.br'><%= cl_image_tag("logo_easy.png", :height=>40, :crop=>"scale") %></a>
 </div>
 
-
-
-
-
-<style media="screen" type="text/css">
-
-.email-message {
-  font-family:'Sans-serif';
-  font-size: 20px;
-}
-h2{
-  color:#F12B6B;
-}
-
-#easy {
-  color:#F12B6B;
-}
-
-.mail-footer {
-  margin-top: 150px;
-  font-family:'Sans-serif';
-  font-size: 24px;
-}
-
-</style>
 

@@ -17,7 +17,7 @@ module CampaignCreator
     )
     campaign.save!
       users.each do |user|
-       CampaignMailer.new_campaign(user.id).deliver_later
+       CampaignMailer.new_campaign(user.id, campaign).deliver_later
      end
   end
 
