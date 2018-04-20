@@ -13,7 +13,7 @@ institution4 = Institution.create(name: 'Prefeitura SP', address: 'Av. Paulista,
 puts "Seeding 3 cpoints..."
 beco_do_batman = Cpoint.create(address: 'Rua Gonçalo Afonso - Vila Madalena')
 sta_cruz_metro = Cpoint.create(address: 'Rua Domingos de Morais, 2564')
-google_campus = Cpoint.create(address: 'Rua Coronel Oscar porto, 70')
+google_campus = Cpoint.create(address: 'Rua Coronel Oscar Porto, 70')
 
 
 puts "Seeding 2 users - beco do batman..."

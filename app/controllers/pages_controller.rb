@@ -15,7 +15,7 @@ class PagesController < ApplicationController
   end
 
   def about_us
-    @team = {thiago: {name: "Thiago Scatigno", email: "thiago@icity.com.br", phrase: "Equipe nota 10"}, marcos: {name: "Marcos Lessa", email: "mlessa@gmail.com", phrase: "O Brazil eh uma merda"}, andre: {name: "Andre Miotto", email: "miotto082@gmail.com", phrase: "Whaaaaaaattttt"}, cesar: {name: "Cesar Fuster", email: "cfuster@uol.com.br", phrase: "Uai o que? Sua bicha"}}
+    @team = {thiago: {name: "Thiago Scatigno", email: "thiago@icity.com.br", phrase: "Time nota 10!"}, marcos: {name: "Marcos Lessa", email: "mlessa@gmail.com", phrase: "Muito bom participar!"}, andre: {name: "Andre Miotto", email: "miotto082@gmail.com", phrase: "Sensacional!"}, cesar: {name: "Cesar Fuster", email: "cfuster@uol.com.br", phrase: "Valeu pessoal! =)"}}
   end
 
   def privacy
